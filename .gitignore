@@ -1,6 +1,8 @@
 node_modules/
+/public/assets
 bundle.js
 bundle.js.map
 .byebug_history
 .DS_Store
 npm-debug.log
+master.key
