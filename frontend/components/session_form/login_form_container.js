@@ -6,9 +6,9 @@ import SessionForm from './session_form'
 
 const mSTP = ({errors}) => {
     return{
-        errors: errors.session,
-        formType: 'login',
-        navLink: <Link to='/signup'>Sign up</Link>
+        errors: errors.sessionErrors,
+        formType: 'Login!',
+        navLink: <Link to='/signup'>Log in</Link>
     }
 }
 
