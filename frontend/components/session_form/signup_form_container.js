@@ -10,13 +10,13 @@ const mSTP = ({errors}) => {
     return{
         errors: errors.sessionErrors,
         formType: 'Sign up',
-        navLink: <Link to='/login'>Sign up</Link>
     }
 }
 
 const mDTP = dispatch => {
     return {
         processForm: (user) => dispatch(signup(user)),
+        login: (user) => dispatch(login(user)),
         otherForm: (
             <button onClick={() => dispatch(openModal('login'))}>
                 Log in

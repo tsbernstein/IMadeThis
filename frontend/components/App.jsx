@@ -11,8 +11,6 @@ const App = () => (
       <Modal />
       <NavBarContainer/>
       <Switch>
-      {/* <AuthRoute path='/login' component={LoginFormContainer}/>
-      <AuthRoute path='/signup' component={SignupFormContainer}/> */}
       </Switch>
   </div>
 );
