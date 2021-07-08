@@ -18,3 +18,13 @@
     padding: 2%;
     color: white;
   }
+
+  .close-x {
+    position: relative;
+    left: 257px;
+    bottom: 80px;
+  }
+
+  .close-x:hover {
+    cursor: pointer;
+  }

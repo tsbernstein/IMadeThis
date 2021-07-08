@@ -7,25 +7,30 @@
 
 .logo {
     margin-left: 10px;
-    margin-top: 0%;
-    margin-bottom: 0%;
+    margin-top: 6px;
     color: darkorange;
     padding: 5px;
 }
 
 .login-logout {
-    margin-top: 8px;
+    margin-top: 13px;
     margin-right: 10px;
     padding: 6px;
     padding-left: 15px;
     color: white;
 }
 
+.log-button 
+{
+    color:white;
+    background-color: rgb(24, 26, 27);
+    border: none;
+}
+
 .search input[type=text] {
     padding: 10px;
     border: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 10px;
     font-size: 17px;
     width: 500px;
     height: 15px;
@@ -40,6 +45,9 @@
 
   .welcome {
       color: white;
+      margin-left: 15px;
+      margin-top: 14px;
+      padding: 6px;
   }
 
   .search-button {
@@ -47,5 +55,5 @@
       background: transparent;
       border: none;
       outline: none;
-      margin-left: -33px;
+      margin-left: -40px;
   }

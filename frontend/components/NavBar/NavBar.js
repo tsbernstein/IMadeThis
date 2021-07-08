@@ -9,15 +9,15 @@ class NavBar extends React.Component {
 
     logoutButton() {
         return (
-            <button onClick={this.props.logout}>Logout</button>
+            <button className="log-button" onClick={this.props.logout}>Logout</button>
         )
     }
 
     sessionLinks = () => (
         <nav>
-            <button onClick={() => this.props.openModal('login')}>Sign in</button>
+            <button className="log-button" onClick={() => this.props.openModal('login')}>Sign in</button>
             &nbsp;or&nbsp;
-            <button onClick={() => this.props.openModal('signup')}>Sign up</button>
+            <button className="log-button" onClick={() => this.props.openModal('signup')}>Sign up</button>
         </nav>
     )
 

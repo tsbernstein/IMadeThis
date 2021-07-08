@@ -55,8 +55,10 @@ class SessionForm extends React.Component {
         return(
             <>
                 <form onSubmit={this.handleSubmit}>
-                    <h2>{this.props.formType}</h2>
+                    <h2>{this.props.formType} to continue</h2>
+                    <p>Sign in or register with your email address</p>
                     <div onClick={this.props.closeModal} className='close-x'>X</div>
+
                     <label>Username:   
                         <input 
                         type='text'
@@ -82,9 +84,9 @@ class SessionForm extends React.Component {
                     </label>
                     <br />
                     {this.renderErrors()}
-                    <button type='submit'>{this.props.formType}</button>
-                    or
-                    <button onClick={this.handleDemoUser}>
+                    <button className="log-button" type='submit'>Continue</button>
+                    &nbsp;or&nbsp;
+                    <button className="log-button" onClick={this.handleDemoUser}>
                         Demo Login
                     </button>
                 </form>
