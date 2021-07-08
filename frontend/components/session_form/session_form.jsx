@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDemoUser = this.handleDemoUser.bind(this)
     }
 
     handleSubmit(e) {
@@ -38,6 +39,16 @@ class SessionForm extends React.Component {
                 ))}
             </ul>
         )
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        const demoUser = {
+            username: 'Demo',
+            password: 'password',
+            display_name: 'Demo User'
+        }
+        this.props.processForm(demoUser).then(() => this.props.closeModal())
     }
 
     render() {
@@ -72,6 +83,10 @@ class SessionForm extends React.Component {
                     <br />
                     {this.renderErrors()}
                     <button type='submit'>{this.props.formType}</button>
+                    or
+                    <button onClick={this.handleDemoUser}>
+                        Demo Login
+                    </button>
                 </form>
             </>
         )
