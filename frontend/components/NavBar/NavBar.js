@@ -22,13 +22,15 @@ class NavBar extends React.Component {
 
     render() {
         return(
-            <>
+            <div className="nav-bar">
                 <header>
-                    <h1>I Made This</h1>
+                    <h1 className="logo">I Made This</h1>
                 </header>
 
-                {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
-            </>
+                <div className="login-logout">
+                    {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
+                </div>
+            </div>
         )
     }
 }
