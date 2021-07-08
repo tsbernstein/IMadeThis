@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaSearch } from "react-icons/fa";
 
 class NavBar extends React.Component {
     constructor(props){
@@ -26,6 +27,15 @@ class NavBar extends React.Component {
                 <header>
                     <h1 className="logo">I Made This</h1>
                 </header>
+
+                <div className="search">
+                    <input type="text" placeholder="Search for anything"/>
+                    <button type="submit" className="search-button" >
+                        <FaSearch/>
+                    </button>
+                </div>
+
+                <p className="welcome">{this.props.currentUser ? `Welcome Back, ${this.props.currentUser.display_name}!` : ""}</p>
 
                 <div className="login-logout">
                     {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
