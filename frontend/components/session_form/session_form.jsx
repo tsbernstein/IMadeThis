@@ -15,7 +15,11 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal);
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors();
     }
 
     update(field) {
@@ -41,6 +45,7 @@ class SessionForm extends React.Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
+                    <div onClick={this.props.closeModal} className='close-x'>X</div>
                     <label>Username:   
                         <input 
                         type='text'
