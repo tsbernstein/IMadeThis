@@ -7,5 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Product.destroy_all
 
 demo = User.create!(username: 'Demo', password: 'password', display_name: 'Demo User');
+
+products = [
+    [ title: 'plush', description: 'Pikachu plush', price: 20, seller_id: 1], 
+    [ title: 'mug', description: 'ceramic mug', price: 20, seller_id: 2], 
+    [ title: 'pillow', description: 'hand stitched pillow', price: 20, seller_id: 3], 
+    [ title: 'painting', description: 'painting of a pikachu', price: 20, seller_id: 4], 
+    [ title: 'necklace', description: 'necklace with your initials', price: 20, seller_id: 5] 
+]
+
+products.each do |product|
+    Product.create!(product)
+end

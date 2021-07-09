@@ -1,16 +1,22 @@
 class Api::ProductsController < ApplicationController
     def show
-        @product = Product.includes(:seller)
-        if @product
-            render :show
-        else
-            render json: @product.errors.full_messages, status: 404
-        end
+        @product = Product.find_by(params[:id])
+        render :show
     end
 
     def index
         @products = Product.all
         render :index
+    end
+
+    def create
+        @product = Product.create!(product_params)
+
+        if @product.save
+            render :show
+        else
+            render json: @product.errors.full_messages, status: :unprocessable_entity
+        end
     end
 
     private
