@@ -15,7 +15,7 @@ export const fetchProduct = id => (
 export const createProduct = productForm => (
     $.ajax({
         method: 'POST',
-        url: '/api/product',
+        url: '/api/products',
         data: productForm
     })
 )
