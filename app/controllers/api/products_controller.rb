@@ -1,19 +1,19 @@
 class Api::ProductsController < ApplicationController
     def show
-        @product = Product.find_by(params[:id])
-        render 'api/products/show'
+        @product = Product.find(params[:id])
+        render :show
     end
 
     def index
         @products = Product.all
-        render 'api/products/index'
+        render :index
     end
 
     def create
         @product = Product.create!(product_params)
 
         if @product.save
-            render 'api/products/index'
+            render :index
         else
             render json: @product.errors.full_messages, status: :unprocessable_entity
         end
@@ -21,6 +21,6 @@ class Api::ProductsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:title, :description, :price, :seller_id)
+        params.require(:product).permit(:title, :description, :price, :seller_id, photos: [])
     end
 end

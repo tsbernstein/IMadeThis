@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
                     <br />
                     {this.renderErrors()}
                     <div className='log-button-modal-div'>
-                        <button className="log-button-modal" type='submit'>Continue</button>
+                        <button className="log-button-modal-continue" type='submit'>Continue</button>
                         <br/>
                     </div>
                     <br />
@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
                     </div>
                         <br/>
                     <div className='log-button-modal-div'>
-                        <button className="log-button-modal" onClick={this.handleDemoUser}>
+                        <button className="log-button-modal-demo" onClick={this.handleDemoUser}>
                             Demo Login
                         </button>
                     </div>

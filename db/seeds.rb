@@ -1,3 +1,5 @@
+require 'open-uri'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -17,14 +19,22 @@ user3 = User.create!({username: 'Phil', password: '123456', display_name: 'Phil'
 user4 = User.create!({username: 'Stephanie', password: '123456', display_name: 'Stephanie'})
 user5 = User.create!({username: 'Tricksie', password: '123456', display_name: 'Tricksie'})
 
-products = [
-    {title: 'plush', description: 'Pikachu plush', price: 20, seller_id: user1.id}, 
-    {title: 'mug', description: 'ceramic mug', price: 20, seller_id: user2.id}, 
-    {title: 'pillow', description: 'hand stitched pillow', price: 20, seller_id: user3.id}, 
-    {title: 'painting', description: 'painting of a pikachu', price: 20, seller_id: user4.id}, 
-    {title: 'necklace', description: 'necklace with your initials', price: 20, seller_id: user5.id} 
-]
+product1 = Product.create!({title: 'plush', description: 'Pikachu plush', price: 20.00, seller_id: user1.id})
 
-products.each do |product|
-    Product.create!(product)
-end
+product1.photo.attach(io: URI.open("https://imadethis-seeds.s3.us-east-2.amazonaws.com/pikachu_plush.jpg"), filename: "1.jpg")
+
+product2 = Product.create!({title: 'mug', description: 'ceramic mug', price: 20.00, seller_id: user2.id})
+
+product2.photo.attach(io: URI.open("https://imadethis-seeds.s3.us-east-2.amazonaws.com/mug.jpg"), filename: "2.jpg")
+
+product3 = Product.create!({title: 'pillow', description: 'hand stitched pillow', price: 20.00, seller_id: user3.id})
+
+product3.photo.attach(io: URI.open("https://imadethis-seeds.s3.us-east-2.amazonaws.com/pillow.jpg"), filename: "3.jpg")
+
+product4 = Product.create!({title: 'painting', description: 'painting of a pikachu', price: 20.00, seller_id: user4.id})
+
+product4.photo.attach(io: URI.open("https://imadethis-seeds.s3.us-east-2.amazonaws.com/painting.jpg"), filename: "4.jpg")
+
+product5 = Product.create!({title: 'necklace', description: 'necklace with your initials', price: 20.00, seller_id: user5.id} )
+
+product5.photo.attach(io: URI.open("https://imadethis-seeds.s3.us-east-2.amazonaws.com/necklace.jpg"), filename: "5.jpg")

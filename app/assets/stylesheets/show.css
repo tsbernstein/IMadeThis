@@ -1,0 +1,14 @@
+.show-image {
+    height: 500px;
+    width: 500px;
+}
+
+.show-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.show-info-container {
+    display: grid;
+    grid-template-rows: 10% 10% 10% 70%;
+}
