@@ -25,7 +25,7 @@ class NavBar extends React.Component {
         return(
             <div className="nav-bar">
                 <header>
-                    <h1 className="logo">I Made This</h1>
+                    <Link to='/' className='home-link'><h1 className="logo">I Made This</h1></Link>
                 </header>
 
                 <div className="search">

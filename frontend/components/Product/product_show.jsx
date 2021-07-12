@@ -15,6 +15,7 @@ class ProductShow extends React.Component{
         debugger;
         return (
             <div className="show-container">
+                <p></p>
                 <img className='show-image' src={this.props.product.photoUrl}/>
                 <div className='show-info-container'>
                     <p>reviews placeholder</p>

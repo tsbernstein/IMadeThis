@@ -13,6 +13,10 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.home-link {
+    text-decoration: none;
+}
+
 .login-logout {
     margin-top: 13px;
     margin-right: 10px;
