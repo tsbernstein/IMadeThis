@@ -9,8 +9,7 @@ class ProductIndexItem extends React.Component{
         return(
             <li>
               {this.props.product.title}
-              {this.props.product.description}
-              {this.props.product.price}
+                <img src={product.image}/>
             </li>
         )
     }
