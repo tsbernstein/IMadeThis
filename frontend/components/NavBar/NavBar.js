@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 
 class NavBar extends React.Component {
     constructor(props){
@@ -39,6 +39,10 @@ class NavBar extends React.Component {
 
                 <div className="login-logout">
                     {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
+                </div>
+
+                <div className='shopping-cart'>
+                    <FaShoppingCart/>
                 </div>
             </div>
         )

@@ -55,28 +55,34 @@ class SessionForm extends React.Component {
         return(
             <>
                 <form onSubmit={this.handleSubmit}>
-                    <h2>{this.props.formType} to continue</h2>
+                    <h3>{this.props.formType} to continue</h3>
                     <p>Sign in or register with your email address</p>
                     <div onClick={this.props.closeModal} className='close-x'>X</div>
 
-                    <label>Username:   
-                        <input 
+                    <label>Username
+                        <br />  
+                        <input
+                        className='form-input'
                         type='text'
                         onChange={this.update('username')}
                         value={this.state.username}
                         />
                     </label>
                     <br />
-                    <label>Password:   
-                        <input 
+                    <label>Password
+                    <br />  
+                        <input
+                        className='form-input'
                         type='password'
                         onChange={this.update('password')}
                         value={this.state.password}
                         />
                     </label>
                     <br />
-                    <label>Display Name:   
-                        <input 
+                    <label>Display Name
+                    <br />  
+                        <input
+                        className='form-input'
                         type='text'
                         onChange={this.update('display_name')}
                         value={this.state.display_name}
@@ -84,11 +90,23 @@ class SessionForm extends React.Component {
                     </label>
                     <br />
                     {this.renderErrors()}
-                    <button className="log-button" type='submit'>Continue</button>
-                    &nbsp;or&nbsp;
-                    <button className="log-button" onClick={this.handleDemoUser}>
-                        Demo Login
-                    </button>
+                    <div className='log-button-modal-div'>
+                        <button className="log-button-modal" type='submit'>Continue</button>
+                        <br/>
+                    </div>
+                    <br />
+                    <div className='log-button-modal-OR'>
+                        <span>
+                        OR
+                        </span>
+                        <br/>
+                    </div>
+                        <br/>
+                    <div className='log-button-modal-div'>
+                        <button className="log-button-modal" onClick={this.handleDemoUser}>
+                            Demo Login
+                        </button>
+                    </div>
                 </form>
             </>
         )

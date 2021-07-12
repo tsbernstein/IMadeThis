@@ -1,4 +1,5 @@
 import React from 'react'
+import ProductIndex from '../Product/product_index_container'
 
 class Splash extends React.Component {
     constructor(props) {
@@ -9,13 +10,7 @@ class Splash extends React.Component {
     render(){
         return (
             <div>
-                <ul>
-                    {this.props.products.map(
-                        (product, i) => (
-                            <li>{product.title}</li>
-                        )
-                    )}
-                </ul>
+                <ProductIndex/>
             </div>
         )
     }

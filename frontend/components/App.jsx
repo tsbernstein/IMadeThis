@@ -3,7 +3,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 import { AuthRoute } from "../util/route_util";
 import NavBarContainer from "./NavBar/NavBarContainer";
 import Modal from './modal/modal'
-import Splash from "./splash/splash_container";
+import Splash from "./splash/splash";
 
 const App = () => (
   <div>
