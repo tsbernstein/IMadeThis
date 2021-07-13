@@ -8,7 +8,6 @@ class ProductIndexItem extends React.Component{
     }
     
     render(){
-        debugger
         return(
             <div className='index-container'>
               <Link to={`/products/${this.props.product.id}`}>

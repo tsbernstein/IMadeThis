@@ -9,9 +9,9 @@
       flex-direction: row;
       justify-content: center;
       padding: 20px;
-      justify-content: space-evenly;
-      margin-left: 10%;
-      margin-right: 10%;
+      justify-content: space-between;
+      margin-left: 15%;
+      margin-right: 15%;
   }
 
   .yellow-bar {

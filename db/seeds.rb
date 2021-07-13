@@ -11,13 +11,13 @@ require 'open-uri'
 User.destroy_all
 Product.destroy_all
 
-demo = User.create!(username: 'Demo', password: 'password', display_name: 'Demo User');
+demo = User.create!(email: 'Demo', password: 'password', first_name: 'Demo User');
 
-user1 = User.create!({username: 'Tyler', password: '123456', display_name: 'Tyler'})
-user2 = User.create!({username: 'Adam', password: '123456', display_name: 'Adam'})
-user3 = User.create!({username: 'Phil', password: '123456', display_name: 'Phil'})
-user4 = User.create!({username: 'Stephanie', password: '123456', display_name: 'Stephanie'})
-user5 = User.create!({username: 'Tricksie', password: '123456', display_name: 'Tricksie'})
+user1 = User.create!({email: 'Tyler', password: '123456', first_name: 'Tyler'})
+user2 = User.create!({email: 'Adam', password: '123456', first_name: 'Adam'})
+user3 = User.create!({email: 'Phil', password: '123456', first_name: 'Phil'})
+user4 = User.create!({email: 'Stephanie', password: '123456', first_name: 'Stephanie'})
+user5 = User.create!({email: 'Tricksie', password: '123456', first_name: 'Tricksie'})
 
 product1 = Product.create!({title: 'plush', description: 'Pikachu plush', price: 20.00, seller_id: user1.id})
 

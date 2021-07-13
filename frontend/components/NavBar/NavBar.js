@@ -23,26 +23,75 @@ class NavBar extends React.Component {
 
     render() {
         return(
-            <div className="nav-bar">
-                <header>
-                    <Link to='/' className='home-link'><h1 className="logo">I Made This</h1></Link>
-                </header>
+            <div className="nav-container">
+                <div className="nav-bar">
+                    <header>
+                        <Link to='/' className='home-link'><h1 className="logo">I Made This</h1></Link>
+                    </header>
 
-                <div className="search">
-                    <input type="text" placeholder="Search for anything"/>
-                    <button type="submit" className="search-button" >
-                        <FaSearch/>
+                    <div className="search">
+                        <input type="text" placeholder="Search for anything"/>
+                        <button type="submit" className="search-button" >
+                            <FaSearch/>
+                        </button>
+                    </div>
+
+                    <p className="welcome">{this.props.currentUser ? `Welcome Back, ${this.props.currentUser.first_name}!` : ""}</p>
+
+                    <div className="login-logout">
+                        {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
+                    </div>
+
+                    <button className='shopping-cart'>
+                        <FaShoppingCart/>
                     </button>
                 </div>
-
-                <p className="welcome">{this.props.currentUser ? `Welcome Back, ${this.props.currentUser.display_name}!` : ""}</p>
-
-                <div className="login-logout">
-                    {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
-                </div>
-
-                <div className='shopping-cart'>
-                    <FaShoppingCart/>
+                <div className="category-nav">
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Back to School Trends 
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Jewelry & Accessories
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Clothing & Shoes 
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Home & Living 
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Wedding & Party 
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Toys & Entertainment
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Art & Collectibles 
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Craft Supplies 
+                        </button>
+                    </div>
+                    <div className="category-nav-div">
+                        <button className="category-button">
+                            Gifts & Gift Cards 
+                        </button>
+                    </div>
                 </div>
             </div>
         )
