@@ -18,7 +18,7 @@ class ProductIndex extends React.Component{
                 </div>
 
                 <div className='yellow-bar-text'>
-                    <p Shop className='yellow-bar-text2'>Shop special finds</p>
+                    <p className='yellow-bar-text2'>Shop special finds</p>
                 </div>
 
                 <ul className='recommended'>
