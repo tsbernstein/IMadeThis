@@ -1,12 +1,18 @@
 .show-image {
-    height: 850px;
-    width: 900px;
+    /* height: 53.125em; */
+    width: 56.25em;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
     border-radius:2%;
 }
 
 .show-image-small {
-    height: 60px;
-    width: 60px;
+    /* height: 3.75em; */
+    width: 3.75em;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
     border-radius:5%;
 }
 
@@ -16,8 +22,8 @@
 
 .show-container {
     display: flex;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 18%;
+    margin-right: 18%;
     margin-top: 1%;
 }
 
@@ -62,8 +68,10 @@
 .show-price {
     font-size: 35px;
     font-weight: bold;
+    margin-top: 5%;
 }
 
 .show-description {
     font-size: 30px;
+    margin-top: 5%;
 }

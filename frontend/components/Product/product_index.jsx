@@ -11,7 +11,10 @@ class ProductIndex extends React.Component{
     }
 
     render() {
+        const indexedArr = this.props.products.slice(6, 12)
+        const indexedArr2 = this.props.products.slice(0, 6)
         return (
+            <>
             <div className='yellow-bar'>
                 <div className='yellow-bar-text'>
                     <h1 className='yellow-bar-text1'>Because everyone deserves something as unique as they are.</h1>
@@ -22,12 +25,24 @@ class ProductIndex extends React.Component{
                 </div>
 
                 <ul className='recommended'>
-                    {this.props.products.map((product, i) => (
+                    {indexedArr2.map((product, i) => (
+                        <ProductIndexItem product={product} id={product.title + i}/>
+                    ))
+                }
+                </ul>
+            </div>
+            <div className="popular-items">
+                <p>Popular gifts right now</p>
+            </div>
+            <div className='search-history-index'>
+                    <ul className='search-history-index-items'>
+                    {indexedArr.map((product, i) => (
                         <ProductIndexItem product={product} id={product.title + i}/>
                     ))
                     }
-                </ul>
+                    </ul>
             </div>
+            </>
         )
     }
 }
