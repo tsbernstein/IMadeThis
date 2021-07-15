@@ -8,10 +8,10 @@ export const receiveProducts = products => ({
     products
 })
 
-export const receiveProduct = ({product, author}) => ({
+export const receiveProduct = ({product, reviews}) => ({
     type: RECEIVE_PRODUCT,
     product,
-    author
+    reviews
 })
 
 export const fetchProducts = () => dispatch => (

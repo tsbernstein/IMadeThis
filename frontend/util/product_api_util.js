@@ -19,3 +19,4 @@ export const createProduct = productForm => (
         data: productForm
     })
 )
+

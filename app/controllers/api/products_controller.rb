@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def index
-        @products = Product.all
+        @products = Product.includes(photo_attachment: :blob).all
         render :index
     end
 
