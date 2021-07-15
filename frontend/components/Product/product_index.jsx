@@ -24,23 +24,23 @@ class ProductIndex extends React.Component{
                     <p className='yellow-bar-text2'>Shop special finds</p>
                 </div>
 
-                <ul className='recommended'>
+                <div className='recommended'>
                     {indexedArr2.map((product, i) => (
-                        <ProductIndexItem product={product} id={product.title + i}/>
+                        <ProductIndexItem product={product} key={product.title + i}/>
                     ))
                 }
-                </ul>
+                </div>
             </div>
             <div className="popular-items">
                 <p>Popular gifts right now</p>
             </div>
             <div className='search-history-index'>
-                    <ul className='search-history-index-items'>
+                    <div className='search-history-index-items'>
                     {indexedArr.map((product, i) => (
-                        <ProductIndexItem product={product} id={product.title + i}/>
+                        <ProductIndexItem product={product} key={product.title + i}/>
                     ))
                     }
-                    </ul>
+                    </div>
             </div>
             </>
         )

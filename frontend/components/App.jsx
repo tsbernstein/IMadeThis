@@ -5,6 +5,7 @@ import NavBarContainer from "./NavBar/NavBarContainer";
 import Modal from './modal/modal';
 import Splash from "./splash/splash";
 import Show from './Product/product_show_container'
+import Edit from './Review/edit_review_form_container'
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
       <NavBarContainer/>
       <Switch>
         <Route exact path={`/products/:productId`} component={Show}/>
+        <Route exact path={`/reviews/:reviewId/edit`} component={Edit}/>
         <Route exact path="/" component={Splash}/>
       </Switch>
   </div>

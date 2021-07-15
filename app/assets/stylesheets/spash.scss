@@ -1,0 +1,68 @@
+.recommended img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+  }
+
+.search-history-index img {
+  width: 200px;
+  height: 200px;
+}
+
+.search-history-index img:hover {
+  border: solid black 1px;
+}
+
+.search-history-index {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2%;
+}
+
+.search-history-index-items {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+  .recommended {
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 20px;
+      justify-content: space-around;
+      margin-left: 15%;
+      margin-right: 15%;
+  }
+
+  .yellow-bar {
+    background-color: yellow;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .yellow-bar-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .yellow-bar-text1 {
+      font-weight: normal;
+  }
+
+  .yellow-bar-text2 {
+      font-weight: bold;
+  }
+
+  .index-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .popular-items {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 2%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
