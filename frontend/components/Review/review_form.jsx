@@ -28,13 +28,13 @@ class ReviewForm extends React.Component {
             if(this.props.match.params.reviewId) {
                 this.props.action(this.state).then(review => this.history.push(`/products/${review.productId}`));
             } else {
-                this.props.action(this.state)
+                this.props.action(this.state).then(() => this.setState(this.props.review))
             }
         } else {
           this.props.openModal("notloggedreview");
         }
 
-        this.setState(this.props.review)
+        
       }
 
     render() {
