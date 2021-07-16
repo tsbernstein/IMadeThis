@@ -33,66 +33,72 @@ class ReviewForm extends React.Component {
         } else {
           this.props.openModal("notloggedreview");
         }
+
+        this.setState(this.props.review)
       }
 
     render() {
         if(!this.props.review) return null;
-        debugger
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>1
-                            <input 
-                            type="radio"
-                            value={'1'}
-                            checked={this.state.rating === '1'}
-                            onChange={this.update('rating')} />
-                        </label>
-                    </div>
-                    <div>
-                        <label>2
-                            <input 
-                            type="radio"
-                            value={'2'}
-                            checked={this.state.rating === '2'}
-                            onChange={this.update('rating')} />
-                        </label>
-                    </div>
-                    <div>
-                        <label>3
-                            <input 
-                            type="radio"
-                            value={'3'}
-                            checked={this.state.rating === '3'}
-                            onChange={this.update('rating')} />
-                        </label>
-                    </div>
-                    <div>
-                        <label>4
-                            <input 
-                            type="radio"
-                            value={'4'}
-                            checked={this.state.rating === '4'}
-                            onChange={this.update('rating')} />
-                        </label>
-                    </div>
-                    <div>
-                        <label>5
-                            <input 
-                            type="radio"
-                            value={'5'}
-                            checked={this.state.rating === '5'}
-                            onChange={this.update('rating')} />
-                        </label>
+                    <div className='review-radio-buttons'>
+                        <div>
+                            <label>1
+                                <input 
+                                type="radio"
+                                value={'1'}
+                                checked={this.state.rating === '1'}
+                                onChange={this.update('rating')} />
+                            </label>
+                        </div>
+                        <div>
+                            <label>2
+                                <input 
+                                type="radio"
+                                value={'2'}
+                                checked={this.state.rating === '2'}
+                                onChange={this.update('rating')} />
+                            </label>
+                        </div>
+                        <div>
+                            <label>3
+                                <input 
+                                type="radio"
+                                value={'3'}
+                                checked={this.state.rating === '3'}
+                                onChange={this.update('rating')} />
+                            </label>
+                        </div>
+                        <div>
+                            <label>4
+                                <input 
+                                type="radio"
+                                value={'4'}
+                                checked={this.state.rating === '4'}
+                                onChange={this.update('rating')} />
+                            </label>
+                        </div>
+                        <div>
+                            <label>5
+                                <input 
+                                type="radio"
+                                value={'5'}
+                                checked={this.state.rating === '5'}
+                                onChange={this.update('rating')} />
+                            </label>
+                        </div>
                     </div>
                     <textarea
+                        className='review-body'
+                        rows={5}
+                        cols={30}
                         value={this.state.body}
                         onChange={this.update('body')}
                         placeholder="Did you like our product? Let us know!"
                     />
                     <br/>
-                    <button type='submit'>Submit Review!</button>
+                    <button className='submit-button' type='submit'>Submit Review!</button>
                 </form>
             </div>
         )
