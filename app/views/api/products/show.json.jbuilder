@@ -4,7 +4,6 @@ json.product do
     json.reviewIds @product.reviews.pluck(:id)
 end
 
-# debugger
 json.reviews do
   @product.reviews.each do |review|
       json.set! review.id do

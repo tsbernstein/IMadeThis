@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { updateReview, deleteReview, clearReviews } from '../../actions/review_actions'
+import { BsStarFill } from 'react-icons/bs'
 
 class ReviewShow extends React.Component {
     constructor(props){
@@ -9,11 +10,11 @@ class ReviewShow extends React.Component {
     }
 
     deleteReviewButton = (reviewId) => (
-        <button onClick={() => this.props.deleteReview(reviewId)}>Delete Review</button>
+        <button className="submit-button" onClick={() => this.props.deleteReview(reviewId)}>Delete Review</button>
     )
 
     updateReviewButton = (reviewId) => (
-        <button onClick={() => this.props.history.push(`/reviews/${reviewId}/edit`)}>Edit Review</button>
+        <button className="submit-button" onClick={() => this.props.history.push(`/reviews/${reviewId}/edit`)}>Edit Review</button>
     )
 
     componentWillUnmount(){
@@ -23,14 +24,19 @@ class ReviewShow extends React.Component {
     render() {
         if(!this.props.reviews) return null;
         return (
-            <div>
+            <div className="review-container">
                 {this.props.reviews.map((review, i) => (
                     <div className="reviews-show" key={review.id}>
+                        {/* <div className="reviewer-name">{this.props.users[review.author_id].first_name}</div> */}
+                        <div className="review-rating">{review.rating}<BsStarFill className="review-star"/></div>
                         {review.product_id === this.props.product.id ? review.body : null}
                         <br/>
-                        {review.author_id === this.props.sessionId ? this.deleteReviewButton(review.id) : null}
-                        <br/>
-                        {review.author_id === this.props.sessionId ? this.updateReviewButton(review.id) : null}
+                        <div className="review-buttons">
+                            {review.author_id === this.props.sessionId ? this.deleteReviewButton(review.id) : null}
+                            <br/>
+                            {review.author_id === this.props.sessionId ? this.updateReviewButton(review.id) : null}
+                        </div>
+                            <br />
                     </div>
                 ))}
             </div>
@@ -40,7 +46,8 @@ class ReviewShow extends React.Component {
 
 const mSTP = state => ({
     sessionId: state.session.id,
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    users: state.entities.users
 })
 
 const mDTP = dispatch => ({
