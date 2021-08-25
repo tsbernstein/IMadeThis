@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { updateReview, deleteReview, clearReviews } from '../../actions/review_actions'
+import EditReviewForm from './edit_review_form_container'
+import { openModal, closeModal } from '../../actions/modal_actions'
 import { BsStarFill } from 'react-icons/bs'
 
 class ReviewShow extends React.Component {
@@ -13,9 +15,23 @@ class ReviewShow extends React.Component {
         <button className="submit-button" onClick={() => this.props.deleteReview(reviewId)}>Delete Review</button>
     )
 
-    updateReviewButton = (reviewId) => (
-        <button className="submit-button" onClick={() => this.props.history.push(`/reviews/${reviewId}/edit`)}>Edit Review</button>
-    )
+    updateReviewButton = (review) => {
+        //How to send review to edit form?
+        const onClick = () => {
+            this.props.openModal('editReview', review);
+        }
+        return (
+        <button 
+            className="submit-button" 
+            onClick={
+                () => {
+                    onClick()
+                }
+            }
+            >Edit Review
+        </button>
+        )
+    }
 
     componentWillUnmount(){
         this.props.clearReviews();
@@ -34,7 +50,7 @@ class ReviewShow extends React.Component {
                         <div className="review-buttons">
                             {review.author_id === this.props.sessionId ? this.deleteReviewButton(review.id) : null}
                             <br/>
-                            {review.author_id === this.props.sessionId ? this.updateReviewButton(review.id) : null}
+                            {review.author_id === this.props.sessionId ? this.updateReviewButton(review) : null}
                         </div>
                             <br />
                     </div>
@@ -53,7 +69,9 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
     deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
     updateReview: review => dispatch(updateReview(review)),
-    clearReviews: () => dispatch(clearReviews())
+    clearReviews: () => dispatch(clearReviews()),
+    openModal: (modal, modalInfo) => dispatch(openModal(modal, modalInfo)),
+    closeModal: () => dispatch(closeModal())
 })
 
 export default connect(mSTP, mDTP)(withRouter(ReviewShow));

@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
-import ReviewForm from './review_form'
+import EditReviewForm from './edit_review_form'
 import { openModal, closeModal } from '../../actions/modal_actions'
 import { updateReview, fetchReview } from '../../actions/review_actions'
 
-const mSTP = (state, ownProps) => {
+const mSTP = (state) => {
     return {
-    sessionId: state.session.id,
-    currentUser: state.entities.users[state.session.id],
-    review: state.entities.reviews[ownProps.match.params.reviewId]}
+        sessionId: state.session.id,
+        currentUser: state.entities.users[state.session.id],
+        review: state.ui.modalInfo
+    }
 }
 
 const mDTP = dispatch => ({
@@ -17,4 +18,4 @@ const mDTP = dispatch => ({
     fetchReview: review => dispatch(fetchReview(review))
 })
 
-export default connect(mSTP, mDTP)(ReviewForm)
+export default connect(mSTP, mDTP)(EditReviewForm)

@@ -4,8 +4,8 @@ import { withRouter } from 'react-router'
 
 class ReviewForm extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = this.props.review
+        super(props);
+        this.state = this.props.review;
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -32,10 +32,8 @@ class ReviewForm extends React.Component {
             }
         } else {
           this.props.openModal("notloggedreview");
-        }
-
-        
-      }
+        }  
+    }
 
     render() {
         if(!this.props.review) return null;
