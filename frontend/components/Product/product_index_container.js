@@ -1,4 +1,3 @@
-import React from 'react'
 import ProductIndex from './product_index'
 import { connect } from 'react-redux'
 import { fetchProducts } from '../../actions/product_actions'
