@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import Search from '../Search/search_container'
 
 class NavBar extends React.Component {
     constructor(props){
@@ -30,10 +31,7 @@ class NavBar extends React.Component {
                     </header>
 
                     <div className="search">
-                        <input type="text" placeholder="Search for anything"/>
-                        <button type="submit" className="search-button" >
-                            <FaSearch/>
-                        </button>
+                        <Search/>
                     </div>
 
                     <p className="welcome">{this.props.currentUser ? `Welcome Back, ${this.props.currentUser.first_name}!` : ""}</p>

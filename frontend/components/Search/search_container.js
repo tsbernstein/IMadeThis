@@ -14,4 +14,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(Search)
+export default connect(mSTP, mDTP)(Search);
