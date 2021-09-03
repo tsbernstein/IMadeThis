@@ -30,6 +30,10 @@ class Search extends React.Component {
     }
 
     render() {
+        let filteredProducts = this.searchFilter();
+        if (this.state.searchTerm === '') {
+            filteredProducts = [];
+        }
         return (
             <div>
                 <div className='search-bar'>
@@ -44,7 +48,7 @@ class Search extends React.Component {
                     </button>
                 </div>
                 <ul className='search-results'>
-                    {this.searchFilter().map(product => (
+                    {filteredProducts.map(product => (
                         <li key={product.id}>{product.title}</li>
                     ))}
                 </ul>
