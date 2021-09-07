@@ -5,10 +5,12 @@ class Search extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            searchTerm: ''
+            searchTerm: '',
+            searchList: false
         }
         this.update = this.update.bind(this);
         this.searchFilter = this.searchFilter.bind(this);
+        this.closeList = this.closeList.bind(this);
     }
 
     componentDidMount() {
@@ -29,27 +31,49 @@ class Search extends React.Component {
         }
     }
 
+    closeList() {
+        if (!document.getElementsByClassName('search-results')[0]) return null;
+        document.getElementsByClassName('search-results')[0].style.display = 'none';
+        // if (document.activeElement === document.getElementsByClassName('search-bar-input')[0]) {
+        //     document.getElementsByClassName('search-results')[0].style.display = 'block'
+        // } else {
+        //     document.getElementsByClassName('search-results')[0].style.display = 'none'
+        // }
+        console.log('close')
+    }
+
+    openList(e) {
+        // e.preventDefault();
+        if (!document.getElementsByClassName('search-results')[0]) return null;
+        document.getElementsByClassName('search-results')[0].style.display = 'block';
+        console.log('open')
+    }
+
     render() {
+        document.addEventListener('click', () => this.closeList())
+        // this.showItems()
         let filteredProducts = this.searchFilter();
         if (this.state.searchTerm === '') {
             filteredProducts = [];
         }
         return (
-            <div>
+            <div className='search-container'>
                 <div className='search-bar'>
                     <input 
+                        className='search-bar-input'
                         type="text" 
                         value={this.state.searchTerm} 
+                        onClick={this.openList()}
                         onChange={this.update('searchTerm')} 
                         placeholder="Search for anything"
                     />
-                    <button type="submit" className="search-button" >
+                    <button type="submit" className="search-button">
                         <FaSearch/>
                     </button>
                 </div>
                 <ul className='search-results'>
                     {filteredProducts.map(product => (
-                        <li key={product.id}>{product.title}</li>
+                        <li className='search-results-item' key={product.id}>{product.title}</li>
                     ))}
                 </ul>
             </div>

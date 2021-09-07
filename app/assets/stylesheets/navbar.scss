@@ -25,8 +25,7 @@
     white-space: nowrap;
 }
 
-.log-button 
-{
+.log-button {
     color:black;
     background-color: white;
     border: none;
@@ -48,50 +47,50 @@
     color: black;
     outline: none;
     flex-grow: 1;
-  }
+}
 
-  .welcome {
-      color: black;
-      margin-top: 14px;
-      padding: 6px;
-      padding-left: 10px;
-      white-space: nowrap;
-  }
+.welcome {
+    color: black;
+    margin-top: 14px;
+    padding: 6px;
+    padding-left: 10px;
+    white-space: nowrap;
+}
 
-  .search-button {
-      color: black;
-      background: transparent;
-      border: none;
-      outline: none;
-      margin-left: -40px;
-  }
-
-  .shopping-cart {
+.search-button {
     color: black;
     background: transparent;
     border: none;
     outline: none;
-    padding-bottom: 15px;
-    margin: none;
-  }
+    margin-left: -40px;
+}
 
-  .nav-container {
-      display: flex;
-      flex-direction: column;
-      margin-left: 15%;
-      margin-right: 15%;
-  }
+.shopping-cart {
+color: black;
+background: transparent;
+border: none;
+outline: none;
+padding-bottom: 15px;
+margin: none;
+}
 
-  .category-nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      justify-content: space-between;
-      margin-left: 4%;
-      margin-right: 4%;
-  }
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
+}
 
-  .category-button{
+.category-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.category-button{
     border: none;
     background-color: white;
     padding: none;
@@ -99,7 +98,6 @@
     position: relative;
     text-decoration: none;
     font-weight: 400;
-   
     transition: all .35s ease;
 
     &::before {
@@ -126,5 +124,23 @@
             transform: scaleX(1);
         }   
     }   
+}
 
+.search-results {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: 41.2vw;
+    margin-left: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px darkgray;
+}
+
+.search-results-item {
+    padding: 10px;
+}
+
+.search-results-item:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }
