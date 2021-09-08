@@ -6,11 +6,11 @@ class Search extends React.Component {
         super(props);
         this.state = {
             searchTerm: '',
-            searchList: false
+            searching: false
         }
         this.update = this.update.bind(this);
         this.searchFilter = this.searchFilter.bind(this);
-        this.closeList = this.closeList.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
     componentDidMount() {
@@ -31,39 +31,37 @@ class Search extends React.Component {
         }
     }
 
-    closeList() {
-        if (!document.getElementsByClassName('search-results')[0]) return null;
-        document.getElementsByClassName('search-results')[0].style.display = 'none';
-        // if (document.activeElement === document.getElementsByClassName('search-bar-input')[0]) {
-        //     document.getElementsByClassName('search-results')[0].style.display = 'block'
-        // } else {
-        //     document.getElementsByClassName('search-results')[0].style.display = 'none'
-        // }
-        console.log('close')
-    }
-
-    openList(e) {
-        // e.preventDefault();
-        if (!document.getElementsByClassName('search-results')[0]) return null;
-        document.getElementsByClassName('search-results')[0].style.display = 'block';
-        console.log('open')
+    toggle() {
+        if (this.state.searching) {
+            document.getElementsByClassName('search-results')[0].style.display = 'block';
+        } else {
+            document.getElementsByClassName('search-results')[0].style.display = 'none';
+        }
     }
 
     render() {
-        document.addEventListener('click', () => this.closeList())
-        // this.showItems()
         let filteredProducts = this.searchFilter();
         if (this.state.searchTerm === '') {
             filteredProducts = [];
         }
+
+        document.addEventListener('click', () => {
+            if (document.activeElement === document.getElementsByClassName('search-bar-input')[0]) {
+                this.setState({['searching']: true})
+                this.toggle();
+            } else {
+                this.setState({['searching']: false})
+                this.toggle();
+            }
+        })
+
         return (
             <div className='search-container'>
                 <div className='search-bar'>
                     <input 
                         className='search-bar-input'
                         type="text" 
-                        value={this.state.searchTerm} 
-                        onClick={this.openList()}
+                        value={this.state.searchTerm}
                         onChange={this.update('searchTerm')} 
                         placeholder="Search for anything"
                     />
