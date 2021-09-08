@@ -13,9 +13,9 @@ class Search extends React.Component {
         this.toggle = this.toggle.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchProducts();
-    }
+    // componentDidMount() {
+    //     this.props.fetchProducts();
+    // }
 
     searchFilter() {
         const filteredProducts = this.props.products.filter(product => 
@@ -45,7 +45,7 @@ class Search extends React.Component {
             filteredProducts = [];
         }
 
-        document.addEventListener('click', () => {
+        document.addEventListener('click', (e) => {
             if (document.activeElement === document.getElementsByClassName('search-bar-input')[0]) {
                 this.setState({['searching']: true})
                 this.toggle();
@@ -53,6 +53,7 @@ class Search extends React.Component {
                 this.setState({['searching']: false})
                 this.toggle();
             }
+            e.stopImmediatePropagation();
         })
 
         return (
@@ -69,6 +70,7 @@ class Search extends React.Component {
                         <FaSearch/>
                     </button>
                 </div>
+                <div className='search-background'></div>
                 <ul className='search-results'>
                     {filteredProducts.map(product => (
                         <li className='search-results-item' key={product.id}>{product.title}</li>
