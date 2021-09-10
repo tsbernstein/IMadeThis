@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import { FaSearch } from "react-icons/fa";
 
 class Search extends React.Component {
@@ -12,10 +13,6 @@ class Search extends React.Component {
         this.searchFilter = this.searchFilter.bind(this);
         this.toggle = this.toggle.bind(this);
     }
-
-    // componentDidMount() {
-    //     this.props.fetchProducts();
-    // }
 
     searchFilter() {
         const filteredProducts = this.props.products.filter(product => 
@@ -73,7 +70,12 @@ class Search extends React.Component {
                 <div className='search-background'></div>
                 <ul className='search-results'>
                     {filteredProducts.map(product => (
-                        <li className='search-results-item' key={product.id}>{product.title}</li>
+                        <li 
+                            className='search-results-item' 
+                            key={product.id}
+                            onClick={() => this.props.history.push(`products/${product.id}`)}
+                            >{product.title}
+                        </li>
                     ))}
                 </ul>
             </div>
@@ -81,4 +83,4 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+export default withRouter(Search);
