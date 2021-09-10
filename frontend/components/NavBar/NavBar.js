@@ -32,6 +32,7 @@ class NavBar extends React.Component {
 
                     <div className="search">
                         <Search/>
+                        {console.log(Search.WrappedComponent.prototype.clearSearch)}
                     </div>
 
                     <p className="welcome">{this.props.currentUser ? `Welcome Back, ${this.props.currentUser.first_name}!` : ""}</p>

@@ -19,7 +19,7 @@ function Modal({modal, closeModal}) {
       component = <SignupFormContainer />;
       break;
     case "notloggedreview":
-      component = <NotLoggedReview />
+      component = <NotLoggedReview />;
       break;
     case "editReview":
       component = <EditReviewForm/>;

@@ -12,6 +12,7 @@ class Search extends React.Component {
         this.update = this.update.bind(this);
         this.searchFilter = this.searchFilter.bind(this);
         this.toggle = this.toggle.bind(this);
+        this.clearSearch = this.clearSearch.bind(this);
     }
 
     searchFilter() {
@@ -34,6 +35,10 @@ class Search extends React.Component {
         } else {
             document.getElementsByClassName('search-results')[0].style.display = 'none';
         }
+    }
+
+    clearSearch() {
+        this.state.searchTerm = '';
     }
 
     render() {
@@ -73,7 +78,12 @@ class Search extends React.Component {
                         <li 
                             className='search-results-item' 
                             key={product.id}
-                            onClick={() => this.props.history.push(`products/${product.id}`)}
+                            onClick={() => 
+                                {
+                                    this.props.history.push(`products/${product.id}`);
+                                    this.clearSearch();
+                                }
+                            }
                             >{product.title}
                         </li>
                     ))}
