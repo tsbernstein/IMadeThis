@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :products, only: [:show, :index, :create]
     resource :session, only: [:create, :destroy]
     resources :reviews, only: [:create, :update, :destroy, :show]
+    resources :carts, only: [:create, :update, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

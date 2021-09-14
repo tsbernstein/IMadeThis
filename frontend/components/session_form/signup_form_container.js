@@ -1,12 +1,11 @@
 import {connect} from 'react-redux'
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {signup, clearErrors, login} from '../../actions/session_actions'
 import SessionForm from './session_form'
 import { openModal, closeModal } from '../../actions/modal_actions'
+import { createCart } from '../../actions/cart_actions'
 
 const mSTP = ({errors}) => {
-
     return{
         errors: errors.sessionErrors,
         formType: 'Sign up',
@@ -23,7 +22,8 @@ const mDTP = dispatch => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
-        clearErrors: () => dispatch(clearErrors())
+        clearErrors: () => dispatch(clearErrors()),
+        createCart: cart => dispatch(createCart(cart))
     }
 }
 
