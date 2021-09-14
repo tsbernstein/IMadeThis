@@ -8,7 +8,7 @@ class ProductIndexItem extends React.Component{
     }
     
     render(){
-        return(
+        return (
             <div className='index-container'>
               <Link to={`/products/${this.props.product.id}`}>
                 <img className="index-image" src={this.props.product.photoUrl}/>

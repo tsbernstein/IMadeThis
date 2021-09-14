@@ -10,5 +10,9 @@ class Product < ApplicationRecord
     class_name: :Review,
     foreign_key: :product_id
 
+    belongs_to :cart,
+    class_name: :Cart,
+    foreign_key: :product_id
+
     has_one_attached :photo
 end
