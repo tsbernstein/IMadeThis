@@ -1,4 +1,9 @@
-class CartsController < ApplicationController
+class Api::CartsController < ApplicationController
+    def index
+        @carts = Cart.where(user_id: current_user.id)
+        render :index
+    end
+
     def create
         @cart = Cart.new(cart_params)
 
@@ -24,9 +29,18 @@ class CartsController < ApplicationController
         end
     end
 
+    def destroy
+        @cart = Cart.find(params[:id])
+
+        if @cart
+            @cart.destroy
+            render :show
+        end
+    end
+
     private
 
     def cart_params
-        params.require(:cart).permit(:user_id)
+        params.require(:cart).permit(:user_id, :product_id, :quantity)
     end
 end

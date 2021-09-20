@@ -10,6 +10,7 @@ require 'open-uri'
 
 User.destroy_all
 Product.destroy_all
+Cart.destroy_all
 
 demo = User.create!(email: 'Demo', password: 'password', first_name: 'Demo User');
 
@@ -78,3 +79,5 @@ product14.photo.attach(io: URI.open("https://imadethis-seeds.s3.us-east-2.amazon
 product15 = Product.create!({title: 'Hand Made Wallet', description: 'Choose the type of material and style that fits you best. Request extra customizations like initals!', price: 20.00, seller_id: user5.id} )
 
 product15.photo.attach(io: URI.open("https://imadethis-seeds.s3.us-east-2.amazonaws.com/wallet.jpg"), filename: "15.jpg")
+
+demoCart = Cart.create!({user_id: demo.id, product_id: product1.id, quantity: 1})

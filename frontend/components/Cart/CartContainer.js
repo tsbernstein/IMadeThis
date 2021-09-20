@@ -1,0 +1,24 @@
+import { connect } from "react-redux";
+import Cart from './Cart'
+import { updateCart, fetchCart, fetchCarts, deleteCart } from "../../actions/cart_actions";
+import { fetchProduct } from '../../actions/product_actions'
+
+const mSTP = state => {
+    const currentUser = state.entities.users[state.session.id];
+
+    return {
+        carts: Object.values(state.entities.carts)
+    }
+}
+
+const mDTP = dispatch => {
+    return {
+        updateCart: cart => dispatch(updateCart(cart)),
+        fetchCart: cartId => dispatch(fetchCart(cartId)),
+        fetchCarts: () => dispatch(fetchCarts()),
+        deleteCart: (cartId) => dispatch(deleteCart(cartId)),
+        fetchProduct: (product_id) => dispatch(fetchProduct(product_id))
+    }
+}
+
+export default connect(mSTP, mDTP)(Cart)

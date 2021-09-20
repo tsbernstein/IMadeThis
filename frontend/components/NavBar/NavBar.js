@@ -32,7 +32,6 @@ class NavBar extends React.Component {
 
                     <div className="search">
                         <Search/>
-                        {console.log(Search.WrappedComponent.prototype.clearSearch)}
                     </div>
 
                     <p className="welcome">{this.props.currentUser ? `Welcome Back, ${this.props.currentUser.first_name}!` : ""}</p>
@@ -42,7 +41,9 @@ class NavBar extends React.Component {
                     </div>
 
                     <button className='shopping-cart'>
-                        <FaShoppingCart/>
+                        <Link to='/cart' className='cart-link'>
+                            <FaShoppingCart/>
+                        </Link>
                     </button>
                 </div>
                 <div className="category-nav">
