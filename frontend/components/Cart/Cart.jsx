@@ -1,14 +1,9 @@
 import React from "react";
-import { library } from "webpack";
+import CartItem from "./CartItemContainer";
 
 class Cart extends React.Component {
     constructor(props){
         super(props)
-        this.state = {
-            cartItems: []
-        }
-
-        // this.getCartItems = this.getCartItems.bind(this);
     }
 
     componentDidMount() {
@@ -17,17 +12,11 @@ class Cart extends React.Component {
         }
     }
 
-    // getCartItems(cart) {
-    //     const item = this.props.fetchProduct(cart.product_id)
-    //     return (<li key={cart.id}>{item.name}</li>)
-    // }
-
     render() {
         return (
             <div>
                 <ul>{this.props.carts.map((cart => (
-                    // this.getCartItems(cart)
-                    <li>hello</li>
+                    <CartItem cartItemId={cart.product_id}/>
                 )))}
                 </ul>
             </div>

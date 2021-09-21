@@ -7,7 +7,7 @@ const mSTP = state => {
     const currentUser = state.entities.users[state.session.id];
 
     return {
-        carts: Object.values(state.entities.carts)
+        carts: Object.values(state.entities.carts),
     }
 }
 
