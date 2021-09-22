@@ -10,12 +10,6 @@ class CartItem extends React.Component {
     }
 
     render() {
-        // let product
-        // if (!this.props.product.length) {
-        //     product = null
-        // } else {
-        //     product = this.props.product[0]
-        // }
         if (!this.props.product.length) return null;
 
         return (
@@ -30,7 +24,7 @@ class CartItem extends React.Component {
                     <img className='cart-item-image' src={this.props.product[0].photoUrl}/>
                 </div>
                 <div>
-                    {this.props.product[0].price}
+                    ${this.props.product[0].price}0
                 </div>
             </div>
         )

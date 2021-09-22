@@ -14,7 +14,7 @@ class Cart extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='cart-container'>
                 <ul>{this.props.carts.map((cart => (
                     <CartItem cartItemId={cart.product_id}/>
                 )))}

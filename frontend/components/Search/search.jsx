@@ -69,7 +69,7 @@ class Search extends React.Component {
                         placeholder="Search for anything"
                     />
                     <button type="submit" className="search-button">
-                        <FaSearch/>
+                        <FaSearch className='search-button-image'/>
                     </button>
                 </div>
                 <div className='search-background'></div>

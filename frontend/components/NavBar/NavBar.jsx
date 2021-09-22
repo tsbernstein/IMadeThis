@@ -34,7 +34,7 @@ class NavBar extends React.Component {
                         <Search/>
                     </div>
 
-                    <p className="welcome">{this.props.currentUser ? `Welcome Back, ${this.props.currentUser.first_name}!` : ""}</p>
+                    <p className="welcome">{this.props.currentUser ? `${this.props.currentUser.first_name}` : ""}</p>
 
                     <div className="login-logout">
                         {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
@@ -49,7 +49,7 @@ class NavBar extends React.Component {
                 <div className="category-nav">
                     <div className="category-nav-div">
                         <button className="category-button">
-                            Back to School Trends 
+                            Back to School Trends
                         </button>
                     </div>
                     <div className="category-nav-div">
@@ -59,17 +59,17 @@ class NavBar extends React.Component {
                     </div>
                     <div className="category-nav-div">
                         <button className="category-button">
-                            Clothing & Shoes 
+                            Clothing & Shoes
                         </button>
                     </div>
                     <div className="category-nav-div">
                         <button className="category-button">
-                            Home & Living 
+                            Home & Living
                         </button>
                     </div>
                     <div className="category-nav-div">
                         <button className="category-button">
-                            Wedding & Party 
+                            Wedding & Party
                         </button>
                     </div>
                     <div className="category-nav-div">
@@ -79,17 +79,17 @@ class NavBar extends React.Component {
                     </div>
                     <div className="category-nav-div">
                         <button className="category-button">
-                            Art & Collectibles 
+                            Art & Collectibles
                         </button>
                     </div>
                     <div className="category-nav-div">
                         <button className="category-button">
-                            Craft Supplies 
+                            Craft Supplies
                         </button>
                     </div>
                     <div className="category-nav-div">
                         <button className="category-button">
-                            Gifts & Gift Cards 
+                            Gifts & Gift Cards
                         </button>
                     </div>
                 </div>
