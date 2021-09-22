@@ -9,7 +9,7 @@ const cartReducer = (state = {}, action) => {
             return Object.assign({}, state, {[action.cart.id]: action.cart});
         case DELETE_CART:
             const nextState = Object.assign({}, state);
-            delete nextState[action.cart.id];
+            delete nextState[action.cart.cart.id];
             return nextState;
         default:
             return state;

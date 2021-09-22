@@ -16,7 +16,6 @@ const mDTP = dispatch => {
         updateCart: cart => dispatch(updateCart(cart)),
         fetchCart: cartId => dispatch(fetchCart(cartId)),
         fetchCarts: () => dispatch(fetchCarts()),
-        deleteCart: (cartId) => dispatch(deleteCart(cartId)),
         fetchProduct: (product_id) => dispatch(fetchProduct(product_id))
     }
 }

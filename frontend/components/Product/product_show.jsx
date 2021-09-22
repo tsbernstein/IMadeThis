@@ -10,10 +10,26 @@ import CreateForm from '../Review/new_review_form_container';
 class ProductShow extends React.Component{
     constructor(props){
         super(props)
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId);
+    }
+
+    handleClick(e) {
+        let isInCart = false;
+
+        this.props.carts.forEach(cart => {
+            if (cart.product_id === this.props.product.id) {
+                isInCart = true;
+            }
+        })
+
+        if (!isInCart) {
+            this.props.createCart({user_id: this.props.currentUser.id, product_id: this.props.product.id, quantity: 1});
+        }
     }
 
     render() {
@@ -43,6 +59,9 @@ class ProductShow extends React.Component{
                     <p className='show-title'>{this.props.product.title}</p>
                     <p className='show-price'>${this.props.product.price + 0}</p>
                     <p className='show-description'>{this.props.product.description}</p>
+                    <button onClick={this.handleClick}>
+                        Add to cart
+                    </button>
                 </div>
             </div>
         )
