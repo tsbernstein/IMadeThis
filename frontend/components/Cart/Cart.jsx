@@ -1,5 +1,6 @@
 import React from "react";
 import CartItem from "./CartItemContainer";
+import PriceWidget from "./PriceWidgetContainer";
 
 class Cart extends React.Component {
     constructor(props){
@@ -16,9 +17,10 @@ class Cart extends React.Component {
         return (
             <div className='cart-container'>
                 <ul>{this.props.carts.map((cart => (
-                    <CartItem cartItemId={cart.product_id} cartId={cart.id}/>
+                    <CartItem key={cart.id} cartItemId={cart.product_id} cartId={cart.id}/>
                 )))}
                 </ul>
+                <PriceWidget carts={this.props.carts}/>
             </div>
         )
     }
