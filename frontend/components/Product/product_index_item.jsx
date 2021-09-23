@@ -16,7 +16,7 @@ class ProductIndexItem extends React.Component{
 
               <br/>
 
-              <p>{this.props.product.title}</p>
+              <p className='index-image-title' >{this.props.product.title}</p>
             </div>
         )
     }

@@ -1,16 +1,16 @@
 import { connect } from "react-redux";
-import { fetchProduct } from '../../actions/product_actions'
+import { fetchProducts } from '../../actions/product_actions'
 import PriceWidget from "./PriceWidget";
 
-const mSTP = ( state, ownProps ) => {
+const mSTP = state => {
     return {
-        // products: Object.values(state.entites.products)
+        products: state.entities.products
     }
 }
 
 const mDTP = dispatch => {
     return {
-        fetchProduct: (product_id) => dispatch(fetchProduct(product_id))
+        fetchProducts: () => dispatch(fetchProducts())
     }
 }
 

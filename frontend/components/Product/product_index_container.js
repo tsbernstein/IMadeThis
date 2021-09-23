@@ -8,8 +8,10 @@ const mSTP = state => {
     }
 }
 
-const mDTP = dispatch => ({
-    fetchProducts: () => dispatch(fetchProducts())
-})
+const mDTP = dispatch => {
+    return {
+        fetchProducts: () => dispatch(fetchProducts())
+    }
+}
 
 export default connect(mSTP, mDTP)(ProductIndex);
