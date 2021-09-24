@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PriceWidget extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class PriceWidget extends React.Component {
         this.props.carts.forEach(cart => {
             total += (this.props.products[cart.product_id].price * cart.quantity) 
         })
-        return total;
+        return total.toFixed(2);
     }
 
     render() {
@@ -39,9 +40,11 @@ class PriceWidget extends React.Component {
                     <span>Shipping</span>
                     <span>FREE</span>
                 </div>
-                <button className='checkout-button'>
-                    Proceed to checkout
-                </button>
+                <Link to='/thanks' className='checkout-button-container'>
+                    <button className='checkout-button'>
+                        Proceed to checkout
+                    </button>
+                </Link>
             </div>
         )
     }
