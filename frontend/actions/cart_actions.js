@@ -34,7 +34,6 @@ export const createCart = (cart) => dispatch => (
 )
 
 export const updateCart = (cart) => dispatch => {
-    debugger
     return (
         APIUtil.updateCart(cart).then((cart) => dispatch(recieveCart(cart)))
     )

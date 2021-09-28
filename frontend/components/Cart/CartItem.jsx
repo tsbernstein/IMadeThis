@@ -23,8 +23,15 @@ class CartItem extends React.Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.quantity !== this.state.quantity) {
+            this.props.updateCart(this.state);
+        }
+    }
+
     render() {
         if (!this.props.product) return null;
+        console.log(this.state)
 
         return (
             <div>
