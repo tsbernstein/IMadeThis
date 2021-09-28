@@ -33,9 +33,12 @@ export const createCart = (cart) => dispatch => (
     APIUtil.createCart(cart).then((cart) => dispatch(recieveCart(cart)))
 )
 
-export const updateCart = (cart) => dispatch => (
-    APIUtil.updateCart(cart).then((cart) => dispatch(recieveCart(cart)))
-)
+export const updateCart = (cart) => dispatch => {
+    debugger
+    return (
+        APIUtil.updateCart(cart).then((cart) => dispatch(recieveCart(cart)))
+    )
+}
 
 export const deleteCart = (cartId) => dispatch => (
     APIUtil.deleteCart(cartId).then((cart) => dispatch(removeCart(cart)))

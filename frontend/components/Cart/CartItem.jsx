@@ -3,7 +3,7 @@ import React from "react";
 class CartItem extends React.Component {
     constructor(props){
         super(props)
-        this.state = this.props.cart.quantity;
+        this.state = this.props.cart;
 
         this.handleClick = this.handleClick.bind(this);
         this.update = this.update.bind(this);
@@ -20,7 +20,6 @@ class CartItem extends React.Component {
     update(field) {
         return e => {
             this.setState({[field]: e.currentTarget.value});
-            this.props.updateCart(this.props.cart).then(() => this.setState(this.props.cart.quantity));
         }
     }
 
@@ -41,17 +40,17 @@ class CartItem extends React.Component {
                 <div>
                     ${this.props.product.price}0
                 </div>
-                <select name="quantity" id="quantity" onChange={this.update('quantity')}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+                <select name="quantity" id="quantity" value={this.state.quantity} onChange={this.update('quantity')}>
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
+                    <option value={6}>6</option>
+                    <option value={7}>7</option>
+                    <option value={8}>8</option>
+                    <option value={9}>9</option>
+                    <option value={10}>10</option>
                 </select>
                 <button onClick={this.handleClick}>
                     Remove from cart
