@@ -6,6 +6,7 @@ class PriceWidget extends React.Component {
         super(props)
 
         this.subtotal = this.subtotal.bind(this)
+        this.clearCart = this.clearCart.bind(this);
     }
 
     componentDidMount() {
@@ -20,6 +21,13 @@ class PriceWidget extends React.Component {
             total += (this.props.products[cart.product_id].price * cart.quantity) 
         })
         return total.toFixed(2);
+    }
+
+    clearCart() {
+        debugger
+        this.props.carts.forEach(cart => (
+            this.props.deleteCart(cart.id)
+        ));
     }
 
     render() {
@@ -40,8 +48,8 @@ class PriceWidget extends React.Component {
                     <span>Shipping</span>
                     <span>FREE</span>
                 </div>
-                <Link to='/thanks' className='checkout-button-container'>
-                    <button className='checkout-button'>
+                <Link to='/complete' className='checkout-button-container'>
+                    <button className='checkout-button' onClick={this.clearCart}>
                         Proceed to checkout
                     </button>
                 </Link>

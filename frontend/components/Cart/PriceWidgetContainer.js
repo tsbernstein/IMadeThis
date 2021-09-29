@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { fetchProducts } from '../../actions/product_actions'
+import { deleteCart } from "../../actions/cart_actions";
 import PriceWidget from "./PriceWidget";
 
 const mSTP = state => {
@@ -10,7 +11,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        fetchProducts: () => dispatch(fetchProducts())
+        fetchProducts: () => dispatch(fetchProducts()),
+        deleteCart: (cartId) => dispatch(deleteCart(cartId))
     }
 }
 
