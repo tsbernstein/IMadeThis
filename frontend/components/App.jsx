@@ -1,4 +1,5 @@
 import React from "react";
+import { ProtectedRoute } from '../util/route_util'
 import { Route, Link, Switch } from 'react-router-dom';
 import NavBarContainer from "./NavBar/NavBarContainer";
 import Modal from './modal/modal';
@@ -15,7 +16,7 @@ const App = () => (
       <NavBarContainer/>
       <Switch>
         <Route exact path={`/thanks`} component={ThankYou}/>
-        <Route exact path={`/cart`} component={Cart}/>
+        <ProtectedRoute exact path={`/cart`} component={Cart}/>
         <Route exact path={`/products/:productId`} component={Show}/>
         <Route exact path={`/reviews/:reviewId/edit`} component={Edit}/>
         <Route exact path="/" component={Splash}/>
