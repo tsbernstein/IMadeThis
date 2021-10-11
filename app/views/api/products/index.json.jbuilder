@@ -2,10 +2,6 @@
     json.set! product.id do
         json.partial! 'product', product: product
         json.photoUrl url_for(product.photo)
+        json.reviewIds product.reviews.pluck(:id)
     end
 end
-
-# json.array! @products do |product|
-#     json.extract! product, :id, :title
-#     json.photoUrl url_for(product.photo)
-# end
