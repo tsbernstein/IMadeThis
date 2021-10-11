@@ -11,7 +11,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        fetchProducts: () => dispatch(fetchProducts())
+        fetchProducts: () => dispatch(fetchProducts()),
     }
 }
 
