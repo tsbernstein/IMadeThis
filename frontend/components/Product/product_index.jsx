@@ -10,19 +10,39 @@ class ProductIndex extends React.Component{
         this.props.fetchProducts();
     }
 
+    loggedInMessage() {
+        if (!this.props.currentUser) {
+            return (
+                <>
+                    <div className='yellow-bar-text'>
+                        <h1 className='yellow-bar-text1'>Because everyone deserves something as unique as they are.</h1>
+                    </div>
+
+                    <div className='yellow-bar-text'>
+                        <p className='yellow-bar-text2'>Shop special finds</p>
+                    </div>
+                </>
+            )
+        } else {
+            return (
+                <div className='yellow-bar-text'>
+                    <h1 className='yellow-bar-text1'>
+                        Welcome back, {this.props.currentUser.first_name}
+                    </h1>
+                </div>
+            )
+        }
+    }
+
     render() {
         const indexedArr = this.props.products.slice(6, 12)
         const indexedArr2 = this.props.products.slice(0, 6)
+
+        console.log(this.props.currentUser)
         return (
             <>
             <div className='yellow-bar'>
-                <div className='yellow-bar-text'>
-                    <h1 className='yellow-bar-text1'>Because everyone deserves something as unique as they are.</h1>
-                </div>
-
-                <div className='yellow-bar-text'>
-                    <p className='yellow-bar-text2'>Shop special finds</p>
-                </div>
+                {this.loggedInMessage()}
 
                 <div className='recommended'>
                     {indexedArr2.map((product, i) => (

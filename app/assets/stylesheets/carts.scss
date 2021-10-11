@@ -15,6 +15,14 @@
     max-width: 100%;
 }
 
+.empty-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    font-size: 40px;
+}
+
 .price-widget-container {
     display: flex;
     justify-content: center;

@@ -5,6 +5,8 @@ import PriceWidget from "./PriceWidgetContainer";
 class Cart extends React.Component {
     constructor(props){
         super(props)
+
+        this.cartItems = this.cartItems.bind(this);
     }
 
     componentDidMount() {
@@ -13,7 +15,7 @@ class Cart extends React.Component {
         }
     }
 
-    render() {
+    cartItems() {
         return (
             <div className='cart-container'>
                 <ul>{this.props.carts.map((cart => (
@@ -22,6 +24,20 @@ class Cart extends React.Component {
                 </ul>
                 <PriceWidget carts={this.props.carts}/>
             </div>
+        )
+    }
+
+    emptyCart() {
+        return <div className='empty-cart'>Your cart is empty</div>
+    }
+
+    render() {
+        const cartItems = this.cartItems();
+
+        return (
+            <>
+                {!this.props.carts.length ? this.emptyCart() :  cartItems}
+            </>
         )
     }
 }
