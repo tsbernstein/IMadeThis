@@ -1,8 +1,8 @@
 .recommended img {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-  }
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
 
 .search-history-index img {
   width: 175px;
@@ -10,7 +10,7 @@
 }
 
 .search-history-index img:hover {
-  box-shadow: 0px 0px 8px darkgray;
+  box-shadow: 0px 0px 8px black;
 }
 
 .search-history-index {
@@ -19,56 +19,61 @@
 
 .search-history-index-items {
   display: flex;
-  justify-content: center;
-  justify-content: space-around;
-  margin-left: 15%;
-  margin-right: 15%;
+  justify-content: space-between;
+  margin-left: 18%;
+  margin-right: 18%;
 }
 
-  .recommended {
-      display:flex;
-      padding: 20px;
-      justify-content: space-evenly;
-      margin-left: 20%;
-      margin-right: 20%;
-  }
+.recommended {
+    display:flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    margin-left: 20%;
+    margin-right: 20%;
+}
 
-  .index-image-title {
-    text-align: center;
-  }
+.index-image-title {
+  text-align: center;
+}
 
-  .yellow-bar {
-    background-color: peachpuff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+.yellow-bar {
+  background-color: peachpuff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-  .yellow-bar-text {
+.yellow-bar-text {
+  display: flex;
+  justify-content: center;
+}
+
+.yellow-bar-text1 {
+    font-weight: normal;
+}
+
+.yellow-bar-text2 {
+    font-weight: bold;
+}
+
+.index-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
   }
 
-  .yellow-bar-text1 {
-      font-weight: normal;
-  }
-
-  .yellow-bar-text2 {
-      font-weight: bold;
-  }
-
-  .index-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 16.7%;
-  }
-
-  .popular-items {
+.index-item-container {
     display: flex;
-    justify-content: center;
-    font-size: 30px;
-    margin-top: 2%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.popular-items {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 2%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 .splash-container {
   margin-bottom: 50px;

@@ -9,16 +9,15 @@ class ProductIndexItem extends React.Component{
     
     render(){
         return (
-            <div className='index-container'>
+            <div className='index-item-container'>
               <Link to={`/products/${this.props.product.id}`}>
                 <img className="index-image" src={this.props.product.photoUrl}/>
               </Link>
 
-              <br/>
-
               <p className='index-image-title' >{this.props.product.title}</p>
-              <p>{this.props.product.price}</p>
+              <p>{this.props.product.seller.first_name}</p>
               <p>{this.props.product.reviewIds.length}</p>
+              <p>{parseFloat(this.props.product.price).toFixed(2)}</p>
             </div>
         )
     }
