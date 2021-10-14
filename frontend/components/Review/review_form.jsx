@@ -17,6 +17,12 @@ class ReviewForm extends React.Component {
         }
     }
 
+    updateRating(field){
+        return e => {
+            this.setState({[field]: e});
+        }
+    }
+
     update(field){
         return e => {
             this.setState({[field]: e.currentTarget.value});
@@ -44,7 +50,7 @@ class ReviewForm extends React.Component {
                     <ReactStars
                         size={24}
                         activeColor='#000000'
-                        onChange={this.update('rating')}
+                        onChange={this.updateRating('rating')}
                     >
                     </ReactStars>
                     {/* <div className='review-radio-buttons'>
