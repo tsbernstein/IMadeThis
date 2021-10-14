@@ -1,5 +1,6 @@
-import React from 'react'
-import { withRouter } from 'react-router'
+import React from 'react';
+import { withRouter } from 'react-router';
+import ReactStars from "react-rating-stars-component";
 
 
 class ReviewForm extends React.Component {
@@ -40,7 +41,13 @@ class ReviewForm extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div className='review-radio-buttons'>
+                    <ReactStars
+                        size={24}
+                        activeColor='#000000'
+                        onChange={this.update('rating')}
+                    >
+                    </ReactStars>
+                    {/* <div className='review-radio-buttons'>
                         <div>
                             <label>1
                                 <input 
@@ -86,7 +93,7 @@ class ReviewForm extends React.Component {
                                 onChange={this.update('rating')} />
                             </label>
                         </div>
-                    </div>
+                    </div> */}
                     <textarea
                         className='review-body'
                         rows={5}

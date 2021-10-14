@@ -4,7 +4,7 @@ import { withRouter } from 'react-router'
 import { updateReview, deleteReview, clearReviews } from '../../actions/review_actions'
 import EditReviewForm from './edit_review_form_container'
 import { openModal, closeModal } from '../../actions/modal_actions'
-import { BsStarFill } from 'react-icons/bs'
+import ReactStars from "react-rating-stars-component";
 
 class ReviewShow extends React.Component {
     constructor(props){
@@ -44,7 +44,11 @@ class ReviewShow extends React.Component {
                 {this.props.reviews.map((review, i) => (
                     <div className="reviews-show" key={review.id}>
                         {/* <div className="reviewer-name">{this.props.users[review.author_id].first_name}</div> */}
-                        <div className="review-rating">{review.rating}<BsStarFill className="review-star"/></div>
+                        <ReactStars
+                            value={review.rating}
+                            edit={false}
+                            activeColor='#000000'
+                        ></ReactStars>
                         {review.product_id === this.props.product.id ? review.body : null}
                         <br/>
                         <div className="review-buttons">
