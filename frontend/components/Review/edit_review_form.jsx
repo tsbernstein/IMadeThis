@@ -36,6 +36,7 @@ class EditReviewForm extends React.Component {
                         value={this.state.rating}
                         size={24}
                         color2='#000000'
+                        half={false}
                         onChange={this.updateRating('rating')}
                     >
                     </ReactStars>

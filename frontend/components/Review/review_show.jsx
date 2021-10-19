@@ -57,6 +57,7 @@ class ReviewShow extends React.Component {
                         <ReactStars
                             value={reviewRating}
                             edit={false}
+                            half={false}
                             color2='#000000'
                         ></ReactStars>
                         {review.product_id === this.props.product.id ? review.body : null}

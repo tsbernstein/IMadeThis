@@ -48,9 +48,10 @@ class ReviewForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <ReactStars
-                        value={5}
+                        value={this.state.rating}
                         size={24}
                         color2='#000000'
+                        half={false}
                         onChange={this.updateRating('rating')}
                     >
                     </ReactStars>
