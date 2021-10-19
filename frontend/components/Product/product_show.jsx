@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { withRouter } from "react-router";
-import { BiArrowBack } from 'react-icons/bi'
 import ReviewForm from '../Review/review_form';
 import ReviewShow from '../Review/review_show'
 // import EditForm from '../Review/edit_review_form_container';
@@ -37,7 +36,6 @@ class ProductShow extends React.Component{
         return (
             <div className="show-container">
                 <div className="show-column">
-                    <Link to='/' className='back-link'><p><BiArrowBack/> Back to search results</p></Link>
                     <div className="show-images">
                         <div className='small-show-image'>
                             <img className='show-image-small' src={this.props.product.photoUrl}/>

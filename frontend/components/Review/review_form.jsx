@@ -32,11 +32,11 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.props.currentUser) {
-            if(this.props.match.params.reviewId) {
-                this.props.action(this.state).then(review => this.history.push(`/products/${review.productId}`));
-            } else {
+            // if(this.props.match.params.reviewId) {
+            //     this.props.action(this.state).then(review => this.history.push(`/products/${review.productId}`));
+            // } else {
                 this.props.action(this.state).then(() => this.setState(this.props.review))
-            }
+            // }
         } else {
           this.props.openModal("notloggedreview");
         }  
@@ -48,58 +48,13 @@ class ReviewForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <ReactStars
+                        value={5}
                         size={24}
-                        activeColor='#000000'
+                        color2='#000000'
                         onChange={this.updateRating('rating')}
                     >
                     </ReactStars>
-                    {/* <div className='review-radio-buttons'>
-                        <div>
-                            <label>1
-                                <input 
-                                type="radio"
-                                value={'1'}
-                                checked={this.state.rating === '1'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>2
-                                <input 
-                                type="radio"
-                                value={'2'}
-                                checked={this.state.rating === '2'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>3
-                                <input 
-                                type="radio"
-                                value={'3'}
-                                checked={this.state.rating === '3'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>4
-                                <input 
-                                type="radio"
-                                value={'4'}
-                                checked={this.state.rating === '4'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>5
-                                <input 
-                                type="radio"
-                                value={'5'}
-                                checked={this.state.rating === '5'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                    </div> */}
+               
                     <textarea
                         className='review-body'
                         rows={5}

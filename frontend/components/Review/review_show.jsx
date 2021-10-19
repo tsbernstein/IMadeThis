@@ -9,6 +9,9 @@ import ReactStars from "react-rating-stars-component";
 class ReviewShow extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            reviews: this.props.reviews
+        }
     }
 
     deleteReviewButton = (reviewId) => (
@@ -16,7 +19,6 @@ class ReviewShow extends React.Component {
     )
 
     updateReviewButton = (review) => {
-        //How to send review to edit form?
         const onClick = () => {
             this.props.openModal('editReview', review);
         }
@@ -38,16 +40,24 @@ class ReviewShow extends React.Component {
     }
 
     render() {
+        let reviewerName
+        if (this.props.users.length){
+            reviewerName = this.props.users[review.author_id].first_name;
+        } else {
+            reviewerName = null;
+        }
         if(!this.props.reviews) return null;
         return (
             <div className="review-container">
-                {this.props.reviews.map((review, i) => (
+                {this.props.reviews.map((review, i) => {
+                    let reviewRating = review.rating;
+                    return (
                     <div className="reviews-show" key={review.id}>
-                        {/* <div className="reviewer-name">{this.props.users[review.author_id].first_name}</div> */}
+                        <div className="reviewer-name">{reviewerName}</div>
                         <ReactStars
-                            value={review.rating}
+                            value={reviewRating}
                             edit={false}
-                            activeColor='#000000'
+                            color2='#000000'
                         ></ReactStars>
                         {review.product_id === this.props.product.id ? review.body : null}
                         <br/>
@@ -58,7 +68,7 @@ class ReviewShow extends React.Component {
                         </div>
                             <br />
                     </div>
-                ))}
+                )})}
             </div>
         )
     }

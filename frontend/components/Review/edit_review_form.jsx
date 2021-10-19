@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router'
-import { closeModal } from "../../actions/modal_actions";
+import ReactStars from "react-rating-stars-component";
 
 class EditReviewForm extends React.Component {
     constructor(props) {
@@ -21,58 +21,25 @@ class EditReviewForm extends React.Component {
         }
     }
 
+    updateRating(field){
+        return e => {
+            this.setState({[field]: e});
+        }
+    }
+
     render() {
         if(!this.props.review) return null;
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div className='review-radio-buttons'>
-                        <div>
-                            <label>1
-                                <input 
-                                type="radio"
-                                value={'1'}
-                                checked={this.state.rating === '1'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>2
-                                <input 
-                                type="radio"
-                                value={'2'}
-                                checked={this.state.rating === '2'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>3
-                                <input 
-                                type="radio"
-                                value={'3'}
-                                checked={this.state.rating === '3'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>4
-                                <input 
-                                type="radio"
-                                value={'4'}
-                                checked={this.state.rating === '4'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                        <div>
-                            <label>5
-                                <input 
-                                type="radio"
-                                value={'5'}
-                                checked={this.state.rating === '5'}
-                                onChange={this.update('rating')} />
-                            </label>
-                        </div>
-                    </div>
+                    <ReactStars
+                        value={this.state.rating}
+                        size={24}
+                        color2='#000000'
+                        onChange={this.updateRating('rating')}
+                    >
+                    </ReactStars>
+
                     <textarea
                         className='review-body'
                         rows={5}
