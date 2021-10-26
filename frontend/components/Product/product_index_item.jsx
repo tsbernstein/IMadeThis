@@ -1,10 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from "react-router";
+import ReactStars from "react-rating-stars-component";
 
 class ProductIndexItem extends React.Component{
     constructor (props) {
         super(props);
+
+        this.averageReviews = this.averageReviews.bind(this);
+    }
+
+    componentDidMount() {
+      this.props.product.reviewIds.forEach(reviewId => (
+        this.props.fetchReview(reviewId)
+      ))
+    }
+
+    averageReviews() {
+      let average = 0;
+
+      this.props.reviews.forEach(review => (
+        average += review.rating
+      ));
+
+      average = Math.floor(average / this.props.reviews.length);
+
+      return (
+        <span>
+          <ReactStars
+            value={average}
+            color2='#000000'
+            half={false}
+            edit={false}
+          ></ReactStars>
+          <p>{this.props.reviews.length}</p>
+        </span>
+      )
     }
     
     render(){
@@ -16,8 +47,8 @@ class ProductIndexItem extends React.Component{
 
               <p className='index-image-title' >{this.props.product.title}</p>
               <p>{this.props.product.seller.first_name}</p>
-              <p>{this.props.product.reviewIds.length}</p>
               <p>{parseFloat(this.props.product.price).toFixed(2)}</p>
+              <p>{this.averageReviews()}</p>
             </div>
         )
     }
