@@ -1,18 +1,14 @@
 .show-image {
-    /* height: 53.125em; */
-    width: 56.25em;
-    max-width: 100%;
+    height: 700px;
+    width: 700px;
     max-height: 100%;
-    height: auto;
     border-radius:2%;
 }
 
 .show-image-small {
-    /* height: 3.75em; */
-    width: 5em;
-    max-width: 100%;
+    height: 80px;
+    width: 80px;
     max-height: 100%;
-    height: auto;
     border-radius:5%;
 }
 
@@ -37,11 +33,6 @@
 
 .show-info-container > p {
     padding-bottom: 2%;
-}
-
-.large-show-image {
-    padding-left: 1%;
-    padding-right: 5%;
 }
 
 .show-column {
@@ -79,4 +70,13 @@
 .reviews-form {
     display: flex;
     justify-content: center;
+}
+
+.add-to-cart {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    height: 40px;
 }

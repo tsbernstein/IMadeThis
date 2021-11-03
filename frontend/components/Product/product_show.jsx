@@ -57,7 +57,7 @@ class ProductShow extends React.Component{
                     <p className='show-title'>{this.props.product.title}</p>
                     <p className='show-price'>${this.props.product.price + 0}</p>
                     <p className='show-description'>{this.props.product.description}</p>
-                    <button onClick={this.handleClick}>
+                    <button className='add-to-cart' onClick={this.handleClick}>
                         Add to cart
                     </button>
                 </div>

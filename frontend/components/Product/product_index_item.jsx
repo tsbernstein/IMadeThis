@@ -10,11 +10,13 @@ class ProductIndexItem extends React.Component{
         this.averageReviews = this.averageReviews.bind(this);
     }
 
-    componentDidMount() {
-      this.props.product.reviewIds.forEach(reviewId => (
-        this.props.fetchReview(reviewId)
-      ))
-    }
+    // componentDidMount() {
+    //   this.props.product.reviewIds.map(reviewId => (
+    //     this.props.fetchReview(reviewId))
+    //   )
+    // }
+
+    // All reviews getting added to each product from state.
 
     averageReviews() {
       let average = 0;
@@ -24,6 +26,8 @@ class ProductIndexItem extends React.Component{
       ));
 
       average = Math.floor(average / this.props.reviews.length);
+
+      this.props.clearReviews();
 
       return (
         <span>
@@ -47,8 +51,8 @@ class ProductIndexItem extends React.Component{
 
               <p className='index-image-title' >{this.props.product.title}</p>
               <p>{this.props.product.seller.first_name}</p>
-              <p>{parseFloat(this.props.product.price).toFixed(2)}</p>
-              <p>{this.averageReviews()}</p>
+              <p>${parseFloat(this.props.product.price).toFixed(2)}</p>
+              {/* <p>{this.averageReviews()}</p> */}
             </div>
         )
     }
