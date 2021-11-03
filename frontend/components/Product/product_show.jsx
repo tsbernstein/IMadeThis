@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import { withRouter } from "react-router";
-import ReviewForm from '../Review/review_form';
 import ReviewShow from '../Review/review_show'
-// import EditForm from '../Review/edit_review_form_container';
 import CreateForm from '../Review/new_review_form_container';
+import ReactStars from "react-rating-stars-component";
 
 class ProductShow extends React.Component{
     constructor(props){
         super(props)
 
         this.handleClick = this.handleClick.bind(this);
+        this.averageReviews = this.averageReviews.bind(this);
     }
 
     componentDidMount() {
@@ -31,8 +30,32 @@ class ProductShow extends React.Component{
         }
     }
 
+    averageReviews() {
+        let average = 0;
+  
+        this.props.reviews.forEach(review => (
+          average += review.rating
+        ));
+  
+        average = Math.floor(average / this.props.reviews.length);
+    
+        return (
+          <span className='average-reviews-show'>
+            <p className='total-sales'>{this.props.reviews.length} sales</p>
+            <ReactStars
+              className='total-sales-reviews'
+              value={average}
+              color2='#000000'
+              half={false}
+              edit={false}
+            ></ReactStars>
+          </span>
+        )
+      }
+
     render() {
         if (!this.props.product) return null;
+        console.log(this.props.reviews)
         return (
             <div className="show-container">
                 <div className="show-column">
@@ -53,7 +76,7 @@ class ProductShow extends React.Component{
                 </div>
                 <div className='show-info-container'>
                     <p className='show-seller'>Sold by: {this.props.product.seller.first_name}</p>
-                    <p>reviews placeholder</p>
+                    {this.averageReviews()}
                     <p className='show-title'>{this.props.product.title}</p>
                     <p className='show-price'>${this.props.product.price + 0}</p>
                     <p className='show-description'>{this.props.product.description}</p>
