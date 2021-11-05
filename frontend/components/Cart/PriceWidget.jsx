@@ -17,14 +17,13 @@ class PriceWidget extends React.Component {
 
     subtotal() {
         let total = 0
-        this.props.carts.forEach(cart => {
-            total += (this.props.products[cart.product_id].price * cart.quantity) 
-        })
+        this.props.carts.forEach(cart => (
+            total += (this.props.products[cart.product_id]?.price * cart.quantity) 
+        ))
         return total.toFixed(2);
     }
 
     clearCart() {
-        debugger
         this.props.carts.forEach(cart => (
             this.props.deleteCart(cart.id)
         ));

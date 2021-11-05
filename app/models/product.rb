@@ -16,4 +16,16 @@ class Product < ApplicationRecord
     optional: true
 
     has_one_attached :photo
+
+    def getAverageReview
+        return 0 if self.reviews.length == 0
+        
+        average = 0
+
+        self.reviews.each do |review|
+            average += review.rating
+        end
+
+        average = average.to_f / self.reviews.length
+    end
 end

@@ -1,7 +1,6 @@
 json.product do
   json.partial! 'api/products/product', product: @product
   json.photoUrl url_for(@product.photo)
-  json.reviewIds @product.reviews.pluck(:id)
 end
 
 json.reviews do

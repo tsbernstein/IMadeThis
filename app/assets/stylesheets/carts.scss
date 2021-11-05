@@ -83,3 +83,27 @@
 .complete-home-link:hover {
     text-decoration: underline;
 }
+
+.cart-item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#quantity {
+    height: 40px;
+    width: 60px;
+}
+
+.remove-from-cart {
+    border: none;
+    background-color: transparent;
+}
+
+.cart-items > :not(:last-child) {
+    border-bottom: solid lightgray 1px;
+    margin-bottom: 10px;
+}
+
+.cart-items > :not(:first-child) {
+    margin-top: 10px;
+}

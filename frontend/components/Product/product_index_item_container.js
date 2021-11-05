@@ -2,15 +2,9 @@ import ProductIndexItem from './product_index_item'
 import { connect } from 'react-redux'
 import { fetchReview, clearReviews } from '../../actions/review_actions'
 
-const mSTP = state => ({
-    reviews: Object.values(state.entities.reviews)
+const mSTP = (state, ownProps) => ({
+    average: state.entities.products[ownProps.product.id].average,
+    totalReviews: state.entities.products[ownProps.product.id].totalReviews
 })
 
-const mDTP = dispatch => {
-    return {
-        fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
-        clearReviews: () => dispatch(clearReviews())
-    }
-}
-
-export default connect(mSTP, mDTP)(ProductIndexItem);
+export default connect(mSTP, null)(ProductIndexItem);

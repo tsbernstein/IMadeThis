@@ -31,21 +31,19 @@ class CartItem extends React.Component {
 
     render() {
         if (!this.props.product) return null;
-        console.log(this.state)
 
         return (
-            <div>
-                <div>
-                    {this.props.product.title}
-                </div>
-                <div>
-                    {this.props.product.description}
-                </div>
+            <div className='cart-item-container'>
                 <div>
                     <img className='cart-item-image' src={this.props.product.photoUrl}/>
                 </div>
-                <div>
-                    ${this.props.product.price}0
+                <div className='cart-item-title-container'>
+                    <div>
+                        {this.props.product.title}
+                    </div>
+                    <button className='remove-from-cart' onClick={this.handleClick}>
+                        Remove from cart
+                    </button>
                 </div>
                 <select name="quantity" id="quantity" value={this.state.quantity} onChange={this.update('quantity')}>
                     <option value={1}>1</option>
@@ -59,9 +57,9 @@ class CartItem extends React.Component {
                     <option value={9}>9</option>
                     <option value={10}>10</option>
                 </select>
-                <button onClick={this.handleClick}>
-                    Remove from cart
-                </button>
+                <div>
+                    ${this.props.product.price}0
+                </div>
             </div>
         )
     }

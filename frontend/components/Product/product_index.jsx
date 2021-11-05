@@ -9,7 +9,6 @@ class ProductIndex extends React.Component{
 
     componentDidMount() {
         this.props.fetchProducts();
-        this.props.fetchReviews();
     }
 
     loggedInMessage() {

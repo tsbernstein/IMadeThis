@@ -18,7 +18,7 @@ class Cart extends React.Component {
     cartItems() {
         return (
             <div className='cart-container'>
-                <ul>{this.props.carts.map((cart => (
+                <ul className='cart-items'>{this.props.carts.map((cart => (
                     <CartItem key={cart.id} cart={cart}/>
                 )))}
                 </ul>
