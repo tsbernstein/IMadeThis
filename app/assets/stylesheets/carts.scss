@@ -87,6 +87,7 @@
 .cart-item-container {
     display: flex;
     flex-direction: row;
+    margin-right: 20px;
 }
 
 #quantity {
@@ -95,8 +96,16 @@
 }
 
 .remove-from-cart {
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
     border: none;
     background-color: transparent;
+}
+
+.remove-from-cart:hover {
+    background-color: black;
+    color: white;
 }
 
 .cart-items > :not(:last-child) {
@@ -106,4 +115,20 @@
 
 .cart-items > :not(:first-child) {
     margin-top: 10px;
+}
+
+.cart-item-info-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.cart-item-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-overflow: ellipsis;
+    width: 200px;
+    height: 100%
 }

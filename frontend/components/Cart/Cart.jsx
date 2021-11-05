@@ -15,6 +15,10 @@ class Cart extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.props.clearReviews()
+    }
+
     cartItems() {
         return (
             <div className='cart-container'>
