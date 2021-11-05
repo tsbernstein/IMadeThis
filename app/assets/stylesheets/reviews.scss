@@ -1,13 +1,11 @@
-.review-radio-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
 .review-body {
     border: 2px solid black;
     border-radius: 4px;
-    width: 100%
+    width: 100%;
+}
+
+.review-form-container {
+    width: 100%;
 }
 
 .submit-button {
@@ -31,10 +29,6 @@
     text-decoration: underline;
     font-weight: bold;
     padding-bottom: 2%;
-}
-
-.review-star {
-    fill: gold;
 }
 
 .review-rating {

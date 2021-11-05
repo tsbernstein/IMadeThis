@@ -32,11 +32,7 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.props.currentUser) {
-            // if(this.props.match.params.reviewId) {
-            //     this.props.action(this.state).then(review => this.history.push(`/products/${review.productId}`));
-            // } else {
                 this.props.action(this.state).then(() => this.setState(this.props.review))
-            // }
         } else {
           this.props.openModal("notloggedreview");
         }  
@@ -45,7 +41,7 @@ class ReviewForm extends React.Component {
     render() {
         if(!this.props.review) return null;
         return (
-            <div>
+            <div className='review-form-container'>
                 <form onSubmit={this.handleSubmit}>
                     <ReactStars
                         value={this.state.rating}
@@ -58,9 +54,8 @@ class ReviewForm extends React.Component {
                
                     <textarea
                         className='review-body'
-                        rows={5}
-                        cols={30}
                         value={this.state.body}
+                        rows={5}
                         onChange={this.update('body')}
                         placeholder="Did you like our product? Let us know!"
                     />
