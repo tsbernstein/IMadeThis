@@ -12,16 +12,23 @@
     color:black;
     background-color: white;
     white-space: nowrap;
+    border: hidden;
     border-radius: 25px;
     &:hover {
         background-color: goldenrod;
     }
 }
 
+.submit-review-button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
 .review-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding-top: 2%;
 }
 

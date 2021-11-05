@@ -11,7 +11,11 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchCarts()
+        this.props.fetchCarts();
+    }
+
+    componentDidUpdate() {
+        this.props.fetchCarts();
     }
 
     logoutButton() {
@@ -29,7 +33,7 @@ class NavBar extends React.Component {
     )
 
     cartCount() {
-        if (!this.props.itemCount){
+        if (!this.props.itemCount || !this.props.currentUser){
             return null;
         } else {
             return (

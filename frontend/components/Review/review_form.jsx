@@ -60,7 +60,9 @@ class ReviewForm extends React.Component {
                         placeholder="Did you like our product? Let us know!"
                     />
                     <br/>
-                    <button className='submit-button' type='submit'>Submit Review!</button>
+                    <div className='submit-review-button-container'>
+                        <button className='submit-button' id='submit-review-button' type='submit'>Submit Review!</button>
+                    </div>
                 </form>
             </div>
         )

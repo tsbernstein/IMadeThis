@@ -38,6 +38,7 @@ class ProductIndex extends React.Component{
     render() {
         const indexedArr = this.props.products.slice(6, 12)
         const indexedArr2 = this.props.products.slice(0, 6)
+        const indexedArr3 = this.props.products.slice(12, 18)
 
         return (
             <>
@@ -65,6 +66,13 @@ class ProductIndex extends React.Component{
             <div className='search-history-index'>
                 <div className='search-history-index-items'>
                 {indexedArr.map((product, i) => (
+                    <ProductIndexItem product={product} key={product.title + i}/>
+                ))}
+                </div>
+            </div>
+            <div className='search-history-index'>
+                <div className='search-history-index-items'>
+                {indexedArr3.map((product, i) => (
                     <ProductIndexItem product={product} key={product.title + i}/>
                 ))}
                 </div>
