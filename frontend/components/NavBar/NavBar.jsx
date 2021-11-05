@@ -1,11 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import Search from '../Search/search_container'
 
 class NavBar extends React.Component {
     constructor(props){
         super(props);
+
+        this.cartCount = this.cartCount.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchCarts()
     }
 
     logoutButton() {
@@ -21,6 +27,18 @@ class NavBar extends React.Component {
             <button className="log-button" onClick={() => this.props.openModal('signup')}>Sign up</button>
         </nav>
     )
+
+    cartCount() {
+        if (!this.props.itemCount){
+            return null;
+        } else {
+            return (
+                <div className='cart-count'>
+                    {this.props.itemCount}
+                </div>
+            )
+        }
+    }
 
     render() {
         return(
@@ -42,7 +60,8 @@ class NavBar extends React.Component {
 
                     <button className='shopping-cart'>
                         <Link to='/cart' className='cart-link'>
-                            <FaShoppingCart/>
+                            <FaShoppingCart className='cart-icon'/>
+                            {this.cartCount()}
                         </Link>
                     </button>
                 </div>
