@@ -55,7 +55,7 @@ class ProductShow extends React.Component{
 
     render() {
         if (!this.props.product) return null;
-        console.log(this.props.reviews)
+        let price = parseFloat(this.props.product.price);
         return (
             <div className="show-container">
                 <div className="show-column">
@@ -78,7 +78,7 @@ class ProductShow extends React.Component{
                     <p className='show-seller'>Sold by: {this.props.product.seller.first_name}</p>
                     {this.averageReviews()}
                     <p className='show-title'>{this.props.product.title}</p>
-                    <p className='show-price'>${this.props.product.price + 0}</p>
+                    <p className='show-price'>${price.toFixed(2)}</p>
                     <p className='show-description'>{this.props.product.description}</p>
                     <button className='add-to-cart' onClick={this.handleClick}>
                         Add to cart

@@ -31,6 +31,7 @@ class CartItem extends React.Component {
 
     render() {
         if (!this.props.product) return null;
+        let price = parseFloat(this.props.product.price);
 
         return (
             <div className='cart-item-container'>
@@ -59,7 +60,7 @@ class CartItem extends React.Component {
                         <option value={10}>10</option>
                     </select>
                     <div>
-                        ${this.props.product.price}0
+                        ${price.toFixed(2)}
                     </div>
                 </div>
             </div>
