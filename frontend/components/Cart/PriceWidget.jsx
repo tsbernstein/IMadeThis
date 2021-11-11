@@ -23,6 +23,17 @@ class PriceWidget extends React.Component {
         return total.toFixed(2);
     }
 
+    calculateTax(subtotal) {
+        let tax = 0.05;
+        tax = (subtotal * tax);
+        return tax.toFixed(2)
+    }
+
+    calculateTotal(tax, subtotal) {
+        let total = (parseFloat(tax) + parseFloat(subtotal));
+        return total.toFixed(2);
+    }
+
     clearCart() {
         this.props.carts.forEach(cart => (
             this.props.deleteCart(cart.id)
@@ -46,6 +57,14 @@ class PriceWidget extends React.Component {
                 <div className='shipping'>
                     <span>Shipping</span>
                     <span>FREE</span>
+                </div>
+                <div className='tax'>
+                    <span>Tax</span>
+                    <span>{this.calculateTax(this.subtotal())}</span>
+                </div>
+                <div className='total'>
+                    <span>Total</span>
+                    <span>{this.calculateTotal(this.calculateTax(this.subtotal()), this.subtotal())}</span>
                 </div>
                 <Link to='/complete' className='checkout-button-container'>
                     <button className='checkout-button' onClick={this.clearCart}>
