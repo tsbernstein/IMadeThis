@@ -9,6 +9,7 @@ import Edit from './Review/edit_review_form_container'
 import Footer from './Footer/footer'
 import Cart from './Cart/CartContainer'
 import Complete from "./Cart/Complete";
+import Category from "./Category/category";
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
         <ProtectedRoute exact path={`/cart`} component={Cart}/>
         <Route exact path={`/products/:productId`} component={Show}/>
         <Route exact path={`/reviews/:reviewId/edit`} component={Edit}/>
+        <Route exact path={`/categories`} component={Category}/>
         <Route exact path="/" component={Splash}/>
       </Switch>
       <Footer/>

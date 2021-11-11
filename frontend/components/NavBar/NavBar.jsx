@@ -71,49 +71,67 @@ class NavBar extends React.Component {
                 </div>
                 <div className="category-nav">
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Back to School Trends
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Back to School Trends
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Jewelry & Accessories
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Jewelry & Accessories
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Clothing & Shoes
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Clothing & Shoes
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Home & Living
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Home & Living
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Wedding & Party
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Wedding & Party
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Toys & Entertainment
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Toys & Entertainment
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Art & Collectibles
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Art & Collectibles
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Craft Supplies
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Craft Supplies
+                            </button>
+                        </Link>
                     </div>
                     <div className="category-nav-div">
-                        <button className="category-button">
-                            Gifts & Gift Cards
-                        </button>
+                        <Link to='/categories'>
+                            <button className="category-button">
+                                Gifts & Gift Cards
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

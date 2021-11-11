@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router";
+import { Link } from 'react-router-dom'
 import ReviewShow from '../Review/review_show'
 import CreateForm from '../Review/new_review_form_container';
 import ReactStars from "react-rating-stars-component";
@@ -80,9 +81,11 @@ class ProductShow extends React.Component{
                     <p className='show-title'>{this.props.product.title}</p>
                     <p className='show-price'>${price.toFixed(2)}</p>
                     <p className='show-description'>{this.props.product.description}</p>
-                    <button className='add-to-cart' onClick={this.handleClick}>
-                        Add to cart
-                    </button>
+                    <Link to='/cart'>
+                        <button className='add-to-cart' onClick={this.handleClick}>
+                            Add to cart
+                        </button>
+                    </Link>
                 </div>
             </div>
         )

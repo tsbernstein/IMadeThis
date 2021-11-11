@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 class CartItem extends React.Component {
     constructor(props){
@@ -36,7 +37,9 @@ class CartItem extends React.Component {
         return (
             <div className='cart-item-container'>
                 <div>
-                    <img className='cart-item-image' src={this.props.product.photoUrl}/>
+                    <Link to={`/products/${this.props.product.id}`}>
+                        <img className='cart-item-image' src={this.props.product.photoUrl}/>
+                    </Link>
                 </div>
                 <div className='cart-item-info-container'>
                     <div className='cart-item-title-container'>
