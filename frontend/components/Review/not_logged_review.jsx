@@ -5,10 +5,10 @@ import { openModal } from '../../actions/modal_actions'
 const NotLoggedReview = (props) => {
     return (
         <div className='not-logged-modal-container'>
-            <div className="not-logged-modal" onClick={() => this.props.openModal('login')}>
+            <h3 className="not-logged-modal" onClick={() => this.props.openModal('login')}>
                 Sign in or Sign up
-            </div>
-            <p>to leave a review!</p>
+            </h3>
+            <h3>to leave a review</h3>
         </div>
     )
 }

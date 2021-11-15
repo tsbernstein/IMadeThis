@@ -1,4 +1,4 @@
-.footer {
+.footer-container {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -17,4 +17,13 @@
     &:first-child {
         margin-right: 10px;
     }
+}
+
+.author-info {
+    color: white;
+}
+
+.links {
+    display: flex;
+    padding-left: 20px;
 }
