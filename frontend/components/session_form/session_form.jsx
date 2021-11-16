@@ -70,9 +70,12 @@ class SessionForm extends React.Component {
         return(
             <>
                 <form onSubmit={this.handleSubmit}>
-                    <h3>{this.props.formType} to continue</h3>
+                    <div className='modal-top'>
+                        <h3>{this.props.formType} to continue</h3>
+                        <span onClick={this.props.closeModal} className='close-x'>X</span>
+                    </div>
                     <p>Sign in or register with your email address</p>
-                    <div onClick={this.props.closeModal} className='close-x'>X</div>
+                    {/* <div onClick={this.props.closeModal} className='close-x'>X</div> */}
 
                     <label>Email
                         <br />  

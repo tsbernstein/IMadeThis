@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { openModal, closeModal } from '../../actions/modal_actions'
 
-const NotLoggedReview = (props) => {
+const NotLoggedCart = (props) => {
     return (
         <div className='not-logged-modal-container'>
             <div className='not-logged-modal-top'>
@@ -11,7 +11,7 @@ const NotLoggedReview = (props) => {
             <h3 className="not-logged-modal">
                 Sign in or Sign up
             </h3>
-            <h3>to leave a review</h3>
+            <h3>to view cart</h3>
         </div>
     )
 }
@@ -21,4 +21,4 @@ const mDTP = dispatch => ({
     closeModal: () => dispatch(closeModal())
 })
 
-export default connect(null, mDTP)(NotLoggedReview);
+export default connect(null, mDTP)(NotLoggedCart);

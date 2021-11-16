@@ -21,14 +21,31 @@
     color: black;
   }
 
+  .modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .not-logged-modal-top {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    width: 100%;
+  }
+
   .close-x {
-    position: relative;
-    left: 257px;
-    bottom: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    height: fit-content;
+    padding: 2px;
   }
 
   .close-x:hover {
     cursor: pointer;
+    background-color: black;
+    color: white;
   }
 
   .log-button-modal-continue {
@@ -81,3 +98,13 @@
     border-radius: 5px;
     border-color: rgba(34, 34, 34, 0.15);
   }
+  
+.not-logged-modal {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.not-logged-modal-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

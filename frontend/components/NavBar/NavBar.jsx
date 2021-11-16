@@ -32,6 +32,25 @@ class NavBar extends React.Component {
         </nav>
     )
 
+    notLoggedCart() {
+        return (
+            <button className='shopping-cart' onClick={() => this.props.openModal('notloggedcart')}>
+                <FaShoppingCart className='cart-icon'/>
+            </button>
+        )
+    }
+
+    loggedInCart() {
+        return (
+            <button className='shopping-cart'>
+                <Link to='/cart' className='cart-link'>
+                    <FaShoppingCart className='cart-icon'/>
+                    {this.cartCount()}
+                </Link>
+            </button>
+        )
+    }
+
     cartCount() {
         if (!this.props.itemCount || !this.props.currentUser){
             return null;
@@ -62,12 +81,7 @@ class NavBar extends React.Component {
                         {this.props.currentUser ? this.logoutButton() : this.sessionLinks()}
                     </div>
 
-                    <button className='shopping-cart'>
-                        <Link to='/cart' className='cart-link'>
-                            <FaShoppingCart className='cart-icon'/>
-                            {this.cartCount()}
-                        </Link>
-                    </button>
+                    {this.props.currentUser ? this.loggedInCart() : this.notLoggedCart()}
                 </div>
                 <div className="category-nav">
                     <div className="category-nav-div">
