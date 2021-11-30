@@ -1,6 +1,11 @@
 class Api::CartsController < ApplicationController
     def index
-        @carts = Cart.where(user_id: current_user.id)
+        if current_user
+            @carts = Cart.where(user_id: current_user.id)
+        else
+            @carts = []
+        end
+
         render :index
     end
 
